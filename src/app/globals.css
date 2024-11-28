@@ -92,6 +92,7 @@ body {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
 		"rooms spells"
+		""
 		"abilities spells";
 }
 

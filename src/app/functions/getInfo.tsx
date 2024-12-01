@@ -8,7 +8,7 @@ export const getRooms = (rooms: any) => {
 			{Object.keys(rooms).map(function (key) {
 				return (
 					<>
-						<img alt={key} src={`/images/rooms/${key}.png`} width="auto" height="auto" />
+						<img key={key} alt={key} src={`/images/rooms/${key}.png`} width="auto" height="auto" />
 						{rooms[key]}
 					</>
 				);
@@ -17,20 +17,21 @@ export const getRooms = (rooms: any) => {
 	);
 };
 
-const serializeSpell = (spell: string | string[]) => {
-	if (typeof spell === "string") {
-		return spell;
-	}
-	if (Array.isArray(spell)) {
-		return spell.toString();
+const serializeToString = (data: string | string[] | null) => {
+	if (typeof data === "string") {
+		return data;
+	} else if (Array.isArray(data)) {
+		return data.join(", ");
+	} else {
+		return null;
 	}
 };
 
 export const getSpells = (spells: any) => {
 	return levels.map(function (level) {
 		return (
-			<p>
-				{level}: {spells[level] ? serializeSpell(spells[level]) : "-"}
+			<p key={level}>
+				{level}: {spells[level] ? serializeToString(spells[level]) : "-"}
 			</p>
 		);
 	});
@@ -38,23 +39,37 @@ export const getSpells = (spells: any) => {
 
 export const getAbilities = (creature: Creature) => {
 	return (
-		<div>
-			<p>
-				<img alt="training" src={`/images/rooms/trainingroom.png`} width="auto" height="auto" />
-			</p>
-			<p>
-				<img alt="research" src={`/images/rooms/library.png`} width="auto" height="auto" />
-			</p>
-			<p>
-				<img alt="manufacturing" src={`/images/rooms/workshop.png`} width="auto" height="auto" />
-			</p>
+		<table className="tabel">
+			<tr>
+				<td>
+					<img alt="training" src={`/images/rooms/trainingroom.png`} />
+				</td>
+				<td>{creature.skillTraining}</td>
+			</tr>
+			<tr>
+				<td>
+					<img alt="research" src={`/images/rooms/library.png`} />
+				</td>
+				<td>{creature.research.skill}</td>
+			</tr>
+			<tr>
+				<td>
+					<img alt="manufacturing" src={`/images/rooms/workshop.png`} />
+				</td>
+				<td>{creature.manufacture.skill}</td>
+			</tr>
 			<p></p>
-		</div>
+		</table>
 	);
 };
 
 export const getJobs = (creature: Creature) => {
 	const primary: Multitype = creature.job.primary;
 	const secondary: Multitype = creature.job.secondary;
-	return <div></div>;
+	return (
+		<>
+			<p>1: {serializeToString(primary)}</p>
+			<p>2: {secondary ? serializeToString(secondary) : ""}</p>
+		</>
+	);
 };

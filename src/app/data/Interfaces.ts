@@ -6,8 +6,8 @@ export interface Creature {
 	room: {};
 	job: { primary: Multitype; secondary: Multitype };
 	skillTraining: number;
-	research: {};
-	manufacture: {};
+	research: { skill: number; willRefuseJob: boolean };
+	manufacture: { skill: number; willRefuseJob: boolean };
 	attack: "Melee" | "Ranged";
 	trainingCost: number;
 	salary: number;

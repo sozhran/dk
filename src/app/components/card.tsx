@@ -4,29 +4,27 @@ import { getAbilities, getRooms, getSpells, getJobs } from "../functions/getInfo
 
 export default function Card(creature: Creature) {
 	return (
-		<div className="creature-card">
+		<div key={creature.name} className="creature-card">
 			<section className="top">
-				<Image className="critportrait" alt={creature.textId} src={`/images/creature_portraits/${creature.textId}.png`} width={48} height={48} />
+				<Image key={creature.textId} alt={creature.name} src={`/images/creature_portraits/${creature.textId}.png`} width={48} height={48} />
 				<div className="critname">
 					<h2>{creature.name}</h2>
 				</div>
 			</section>
 			<section className="info">
-				<div className="rooms">
-					<h6>Rooms</h6>
+				<div>
+					<h4>Rooms</h4>
 					{getRooms(creature.room)}
-				</div>
-				<div className="spells">
-					<h6>Spells</h6>
-					{getSpells(creature.spells)}
-				</div>
-				<div className="jobs">
-					<h6>Jobs</h6>
+					<br />
+					<h4>Jobs</h4>
 					{getJobs(creature)}
-				</div>
-				<div className="abilities">
-					<h6>Abilities</h6>
+					<br />
+					<h4>Abilities</h4>
 					{getAbilities(creature)}
+				</div>
+				<div>
+					<h4>Spells</h4>
+					{getSpells(creature.spells)}
 				</div>
 			</section>
 		</div>

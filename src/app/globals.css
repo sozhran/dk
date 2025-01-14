@@ -68,7 +68,7 @@ body {
 
 .creature-card {
 	width: 300px;
-	height: 400px;
+	height: 250px;
 	min-width: 300px;
 	min-height: 150px;
 	border: 2px solid black;
@@ -92,7 +92,7 @@ body {
 	display: grid;
 	width: 100%;
 	grid-template-columns: 1fr 1fr;
-	grid-template-areas: "a d" "b d" "c d";
+	grid-template-areas: "a c" "b c";
 	margin-left: 10px;
 	margin-right: 10px;
 }
@@ -106,14 +106,12 @@ body {
 .info > .abilities {
 	grid-area: c;
 }
-.info > .spells {
-	grid-area: d;
-}
 
 .tabel {
 	justify-content: center;
 	align-items: center;
 }
+
 .critname {
 	display: flex;
 	flex-direction: row;

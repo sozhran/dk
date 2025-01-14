@@ -3,7 +3,7 @@ export interface Creature {
 	textId: string;
 	name: string;
 	faction: "Creatures" | "Heroes";
-	room: {};
+	room: {} | null;
 	job: { primary: Multitype; secondary: Multitype };
 	skillTraining: number;
 	research: { skill: number; willRefuseJob: boolean };
@@ -28,14 +28,14 @@ export interface Creature {
 
 export interface Room {
 	id: number;
-	roomName: string;
-	linkName: string;
+	name: string;
+	textId: string;
 }
 
 export interface Spell {
 	id: number;
-	spellName: string;
-	linkName: string;
+	name: string;
+	textId: string;
 }
 
 export type Multitype = string | string[] | null;

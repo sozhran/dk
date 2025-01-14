@@ -6,7 +6,7 @@ export const Creatures: Creature[] = [
 		textId: "archer",
 		name: "Archer",
 		faction: "Heroes",
-		room: { guardPost: 1 },
+		room: { guard_post: 1 },
 		job: { primary: "manufacturing", secondary: "guarding" },
 		skillTraining: 1,
 		research: { skill: 2, willRefuseJob: false },
@@ -33,7 +33,7 @@ export const Creatures: Creature[] = [
 		textId: "avatar",
 		name: "Avatar",
 		faction: "Heroes",
-		room: { lair: 20, trainingRoom: 36, hatchery: 25 },
+		room: { lair: 20, training: 36, garden: 25 },
 		job: { primary: "training", secondary: null },
 		skillTraining: 4,
 		research: { skill: 3, willRefuseJob: false },
@@ -60,7 +60,7 @@ export const Creatures: Creature[] = [
 		textId: "barbarian",
 		name: "Barbarian",
 		faction: "Heroes",
-		room: { trainingRoom: 9 },
+		room: { training: 9 },
 		job: { primary: "training", secondary: null },
 		skillTraining: 3,
 		research: { skill: 0, willRefuseJob: false },
@@ -114,7 +114,7 @@ export const Creatures: Creature[] = [
 		textId: "bile_demon",
 		name: "Bile Demon",
 		faction: "Creatures",
-		room: { lair: 25, hatchery: 25 },
+		room: { lair: 25, garden: 25 },
 		job: { primary: "manufacturing", secondary: null },
 		skillTraining: 2,
 		research: { skill: 1, willRefuseJob: false },
@@ -141,7 +141,7 @@ export const Creatures: Creature[] = [
 		textId: "dark_mistress",
 		name: "Dark Mistress",
 		faction: "Creatures",
-		room: { tortureChamber: 9 },
+		room: { torture: 9 },
 		job: { primary: "training", secondary: "torture" },
 		skillTraining: 2,
 		research: { skill: 2, willRefuseJob: false },
@@ -168,7 +168,7 @@ export const Creatures: Creature[] = [
 		textId: "demonspawn",
 		name: "Demon Spawn",
 		faction: "Creatures",
-		room: { trainingRoom: 1, treasureRoom: 1 },
+		room: { training: 1, treasure: 1 },
 		job: { primary: "training", secondary: "grouping" },
 		skillTraining: 2,
 		research: { skill: 2, willRefuseJob: false },
@@ -195,7 +195,7 @@ export const Creatures: Creature[] = [
 		textId: "dragon",
 		name: "Dragon",
 		faction: "Creatures",
-		room: { treasureRoom: 25, lair: 15 },
+		room: { treasure: 25, lair: 15 },
 		job: { primary: "research:", secondary: "training" },
 		skillTraining: 3,
 		research: { skill: 4, willRefuseJob: false },
@@ -222,7 +222,7 @@ export const Creatures: Creature[] = [
 		textId: "fairy",
 		name: "Fairy",
 		faction: "Heroes",
-		room: { library: 9, lair: 1 },
+		room: { research: 9, lair: 1 },
 		job: { primary: "research:", secondary: null },
 		skillTraining: 1,
 		research: { skill: 4, willRefuseJob: false },
@@ -249,7 +249,7 @@ export const Creatures: Creature[] = [
 		textId: "fly",
 		name: "Fly",
 		faction: "Creatures",
-		room: {},
+		room: null,
 		job: { primary: "exploration", secondary: null },
 		skillTraining: 1,
 		research: { skill: 1, willRefuseJob: false },
@@ -276,7 +276,7 @@ export const Creatures: Creature[] = [
 		textId: "ghost",
 		name: "Ghost",
 		faction: "Creatures",
-		room: { temple: 4, tortureChamber: 1 },
+		room: { temple: 4, torture: 1 },
 		job: { primary: "worship", secondary: "research:" },
 		skillTraining: 1,
 		research: { skill: 2, willRefuseJob: false },
@@ -303,7 +303,7 @@ export const Creatures: Creature[] = [
 		textId: "giant",
 		name: "Giant",
 		faction: "Heroes",
-		room: { trainingRoom: 25, hatchery: 15 },
+		room: { training: 25, garden: 15 },
 		job: { primary: "training", secondary: null },
 		skillTraining: 2,
 		research: { skill: 0, willRefuseJob: true },
@@ -357,7 +357,7 @@ export const Creatures: Creature[] = [
 		textId: "hell_hound",
 		name: "Hound",
 		faction: "Creatures",
-		room: { scavengerRoom: 9 },
+		room: { scavenger: 9 },
 		job: { primary: "scouting", secondary: "pissing" },
 		skillTraining: 2,
 		research: { skill: 1, willRefuseJob: false },
@@ -384,7 +384,7 @@ export const Creatures: Creature[] = [
 		textId: "imp",
 		name: "Imp",
 		faction: "Creatures",
-		room: {},
+		room: null,
 		job: { primary: "digging", secondary: ["claiming", "reinforcing", "collecting", "arming", "dragging"] },
 		skillTraining: 1,
 		research: { skill: 0, willRefuseJob: false },
@@ -411,7 +411,7 @@ export const Creatures: Creature[] = [
 		textId: "knight",
 		name: "Knight",
 		faction: "Heroes",
-		room: { trainingRoom: 36 },
+		room: { training: 36 },
 		job: { primary: "training", secondary: null },
 		skillTraining: 3,
 		research: { skill: 1, willRefuseJob: false },
@@ -465,7 +465,7 @@ export const Creatures: Creature[] = [
 		textId: "dwarfa",
 		name: "Mountain Dwarf",
 		faction: "Heroes",
-		room: { treasureRoom: 1, workshop: 9 },
+		room: { treasure: 1, workshop: 9 },
 		job: { primary: "manufacturing", secondary: null },
 		skillTraining: 1,
 		research: { skill: 1, willRefuseJob: false },
@@ -492,7 +492,7 @@ export const Creatures: Creature[] = [
 		textId: "orc",
 		name: "Orc",
 		faction: "Creatures",
-		room: { barracks: 1, trainingRoom: 9 },
+		room: { barracks: 1, training: 9 },
 		job: { primary: "training", secondary: "guarding" },
 		skillTraining: 2,
 		research: { skill: 0, willRefuseJob: false },
@@ -519,7 +519,7 @@ export const Creatures: Creature[] = [
 		textId: "witch",
 		name: "Priestess",
 		faction: "Heroes",
-		room: { library: 9, scavengerRoom: 1 },
+		room: { research: 9, scavenger: 1 },
 		job: { primary: "research:", secondary: null },
 		skillTraining: 2,
 		research: { skill: 3, willRefuseJob: false },
@@ -546,7 +546,7 @@ export const Creatures: Creature[] = [
 		textId: "samurai",
 		name: "Samurai",
 		faction: "Heroes",
-		room: { trainingRoom: 9, barracks: 6, tortureChamber: 1 },
+		room: { training: 9, barracks: 6, torture: 1 },
 		job: { primary: "training", secondary: null },
 		skillTraining: 4,
 		research: { skill: 2, willRefuseJob: false },
@@ -600,7 +600,7 @@ export const Creatures: Creature[] = [
 		textId: "spider",
 		name: "Spider",
 		faction: "Creatures",
-		room: { hatchery: 9, lair: 9 },
+		room: { garden: 9, lair: 9 },
 		job: { primary: "freezing", secondary: "training" },
 		skillTraining: 1,
 		research: { skill: 1, willRefuseJob: false },
@@ -654,7 +654,7 @@ export const Creatures: Creature[] = [
 		textId: "thief",
 		name: "Thief",
 		faction: "Heroes",
-		room: { lair: 1, treasureRoom: 9 },
+		room: { lair: 1, treasure: 9 },
 		job: { primary: null, secondary: null },
 		skillTraining: 1,
 		research: { skill: 1, willRefuseJob: false },
@@ -708,7 +708,7 @@ export const Creatures: Creature[] = [
 		textId: "tunneller",
 		name: "Tunneller",
 		faction: "Heroes",
-		room: {},
+		room: null,
 		job: { primary: null, secondary: ["digging", "claiming", "reinforcing"] },
 		skillTraining: 1,
 		research: { skill: 0, willRefuseJob: false },
@@ -762,7 +762,7 @@ export const Creatures: Creature[] = [
 		textId: "sorceror",
 		name: "Warlock",
 		faction: "Creatures",
-		room: { library: 9 },
+		room: { research: 9 },
 		job: { primary: "research:", secondary: null },
 		skillTraining: 2,
 		research: { skill: 5, willRefuseJob: false },
@@ -789,7 +789,7 @@ export const Creatures: Creature[] = [
 		textId: "wizard",
 		name: "Wizard",
 		faction: "Heroes",
-		room: { library: 9 },
+		room: { research: 9 },
 		job: { primary: "research:", secondary: null },
 		skillTraining: 2,
 		research: { skill: 4, willRefuseJob: false },
@@ -816,7 +816,7 @@ export const Creatures: Creature[] = [
 		textId: "time_mage",
 		name: "Time Mage",
 		faction: "Heroes",
-		room: { library: 12, temple: 3 },
+		room: { research: 12, temple: 3 },
 		job: { primary: "research:", secondary: null },
 		skillTraining: 2,
 		research: { skill: 4, willRefuseJob: false },
@@ -843,7 +843,7 @@ export const Creatures: Creature[] = [
 		textId: "druid",
 		name: "Druid",
 		faction: "Creatures",
-		room: { library: 9, guardPost: 4 },
+		room: { research: 9, guard_post: 4 },
 		job: { primary: "research:", secondary: null },
 		skillTraining: 2,
 		research: { skill: 4, willRefuseJob: false },
@@ -868,48 +868,94 @@ export const Creatures: Creature[] = [
 ];
 
 export const Spells: Spell[] = [
-	{ id: 1, spellName: "Arrow", linkName: "arrow" },
-	{ id: 2, spellName: "Dig", linkName: "dig" },
-	{ id: 3, spellName: "Drain", linkName: "drain" },
-	{ id: 4, spellName: "Fart", linkName: "fart" },
-	{ id: 5, spellName: "Fireball", linkName: "fireball" },
-	{ id: 6, spellName: "Flame Breath", linkName: "flamebreath" },
-	{ id: 7, spellName: "Flight", linkName: "flight" },
-	{ id: 8, spellName: "Freeze", linkName: "freeze" },
-	{ id: 9, spellName: "Grenade", linkName: "grenade" },
-	{ id: 10, spellName: "Hailstorm", linkName: "hailstorm" },
-	{ id: 11, spellName: "Hand to Hand", linkName: "handtohand" },
-	{ id: 12, spellName: "Heal", linkName: "heal" },
-	{ id: 13, spellName: "Invisibility", linkName: "invisibility" },
-	{ id: 14, spellName: "Lightning", linkName: "lightning" },
-	{ id: 15, spellName: "Meteor", linkName: "meteor" },
-	{ id: 16, spellName: "Missile", linkName: "missile" },
-	{ id: 17, spellName: "Navigating Missile", linkName: "navigatingmissile" },
-	{ id: 18, spellName: "Poison Cloud", linkName: "poisoncloud" },
-	{ id: 19, spellName: "Rebound", linkName: "rebound" },
-	{ id: 20, spellName: "Sight", linkName: "sight" },
-	{ id: 21, spellName: "Slow", linkName: "slow" },
-	{ id: 22, spellName: "Speed", linkName: "speed" },
-	{ id: 23, spellName: "Teleport", linkName: "teleport" },
-	{ id: 24, spellName: "Wind", linkName: "wind" },
-	{ id: 25, spellName: "Word of Power", linkName: "wordofpower" },
+	{ id: 1, name: "Arrow", textId: "arrow" },
+	{ id: 2, name: "Dig", textId: "dig" },
+	{ id: 3, name: "Drain", textId: "drain" },
+	{ id: 4, name: "Fart", textId: "fart" },
+	{ id: 5, name: "Fireball", textId: "fireball" },
+	{ id: 6, name: "Flame Breath", textId: "flamebreath" },
+	{ id: 7, name: "Flight", textId: "flight" },
+	{ id: 8, name: "Freeze", textId: "freeze" },
+	{ id: 9, name: "Grenade", textId: "grenade" },
+	{ id: 10, name: "Hailstorm", textId: "hailstorm" },
+	{ id: 11, name: "Hand to Hand", textId: "handtohand" },
+	{ id: 12, name: "Heal", textId: "heal" },
+	{ id: 13, name: "Invisibility", textId: "invisibility" },
+	{ id: 14, name: "Lightning", textId: "lightning" },
+	{ id: 15, name: "Meteor", textId: "meteor" },
+	{ id: 16, name: "Missile", textId: "missile" },
+	{ id: 17, name: "Navigating Missile", textId: "navigatingmissile" },
+	{ id: 18, name: "Poison Cloud", textId: "poisoncloud" },
+	{ id: 19, name: "Rebound", textId: "rebound" },
+	{ id: 20, name: "Sight", textId: "sight" },
+	{ id: 21, name: "Slow", textId: "slow" },
+	{ id: 22, name: "Speed", textId: "speed" },
+	{ id: 23, name: "Teleport", textId: "teleport" },
+	{ id: 24, name: "Wind", textId: "wind" },
+	{ id: 25, name: "Word of Power", textId: "wordofpower" },
 ];
 export const Rooms: Room[] = [
-	{ id: 1, roomName: "Treasure Room", linkName: "treasureroom" },
-	{ id: 2, roomName: "Lair", linkName: "lair" },
-	{ id: 3, roomName: "Hatchery", linkName: "hatchery" },
-	{ id: 4, roomName: "Training Room", linkName: "trainingroom" },
-	{ id: 5, roomName: "Library", linkName: "library" },
-	{ id: 6, roomName: "Bridge", linkName: "bridge" },
-	{ id: 7, roomName: "Guard Post", linkName: "guardpost" },
-	{ id: 8, roomName: "Workshop", linkName: "workshop" },
-	{ id: 9, roomName: "Prison", linkName: "prison" },
-	{ id: 10, roomName: "Torture Chamber", linkName: "torturechamber" },
-	{ id: 11, roomName: "Barracks", linkName: "barracks" },
-	{ id: 12, roomName: "Temple", linkName: "temple" },
-	{ id: 13, roomName: "Graveyard", linkName: "graveyard" },
-	{ id: 14, roomName: "Scavenger Room", linkName: "scavengerroom" },
+	{ id: 1, name: "Treasure Room", textId: "treasure" },
+	{ id: 2, name: "Lair", textId: "lair" },
+	{ id: 3, name: "Hatchery", textId: "garden" },
+	{ id: 4, name: "Training Room", textId: "training" },
+	{ id: 5, name: "Library", textId: "research" },
+	{ id: 6, name: "Bridge", textId: "bridge" },
+	{ id: 7, name: "Guard Post", textId: "guard_post" },
+	{ id: 8, name: "Workshop", textId: "workshop" },
+	{ id: 9, name: "Prison", textId: "prison" },
+	{ id: 10, name: "Torture Chamber", textId: "torture" },
+	{ id: 11, name: "Barracks", textId: "barracks" },
+	{ id: 12, name: "Temple", textId: "temple" },
+	{ id: 13, name: "Graveyard", textId: "graveyard" },
+	{ id: 14, name: "Scavenger Room", textId: "scavenger" },
 ];
 
 // check the table against indivudual pages
 // confirm Giant, Ghost attraction
+
+//ROOM_AVAILABLE(ALL_PLAYERS,TREASURE,1,1)
+//ROOM_AVAILABLE(ALL_PLAYERS,LAIR,1,1)
+//ROOM_AVAILABLE(ALL_PLAYERS,GARDEN,1,1)
+//ROOM_AVAILABLE(ALL_PLAYERS,TRAINING,1,1)
+//ROOM_AVAILABLE(ALL_PLAYERS,RESEARCH,1,1)
+//ROOM_AVAILABLE(ALL_PLAYERS,BRIDGE,1,0)
+//ROOM_AVAILABLE(ALL_PLAYERS,GUARD_POST,1,0)
+//ROOM_AVAILABLE(ALL_PLAYERS,WORKSHOP,1,0)
+//ROOM_AVAILABLE(ALL_PLAYERS,PRISON,1,0)
+//ROOM_AVAILABLE(ALL_PLAYERS,TORTURE,1,0)
+//ROOM_AVAILABLE(ALL_PLAYERS,BARRACKS,1,0)
+//ROOM_AVAILABLE(ALL_PLAYERS,TEMPLE,1,0)
+//ROOM_AVAILABLE(ALL_PLAYERS,GRAVEYARD,1,0)
+//ROOM_AVAILABLE(ALL_PLAYERS,SCAVENGER,1,0)
+
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_HAND,1,1)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_SLAP,1,1)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_POSSESS,1,1)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_IMP,1,1)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_SIGHT,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_SPEED,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_OBEY,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_CALL_TO_ARMS,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_CONCEAL,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_HOLD_AUDIENCE,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_CAVE_IN,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_HEAL_CREATURE,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_LIGHTNING,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_PROTECT,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_CHICKEN,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_DISEASE,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_ARMAGEDDON,1,0)
+//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_DESTROY_WALLS,1,0)
+
+//TRAP_AVAILABLE(ALL_PLAYERS,ALARM,1,0)
+//TRAP_AVAILABLE(ALL_PLAYERS,POISON_GAS,1,0)
+//TRAP_AVAILABLE(ALL_PLAYERS,LIGHTNING,1,0)
+//TRAP_AVAILABLE(ALL_PLAYERS,LAVA,1,0)
+//TRAP_AVAILABLE(ALL_PLAYERS,BOULDER,1,0)
+//TRAP_AVAILABLE(ALL_PLAYERS,WORD_OF_POWER,1,0)
+
+//DOOR_AVAILABLE(ALL_PLAYERS,WOOD,1,0)
+//DOOR_AVAILABLE(ALL_PLAYERS,BRACED,1,0)
+//DOOR_AVAILABLE(ALL_PLAYERS,STEEL,1,0)
+//DOOR_AVAILABLE(ALL_PLAYERS,MAGIC,1,0)

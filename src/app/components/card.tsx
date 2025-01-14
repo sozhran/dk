@@ -13,18 +13,18 @@ export default function Card(creature: Creature) {
 			</section>
 			<section className="info">
 				<div>
-					<h4>Rooms</h4>
-					{getRooms(creature.room)}
-					<br />
-					<h4>Jobs</h4>
-					{getJobs(creature)}
-					<br />
+					<div className="rooms">
+						<h4>Rooms</h4>
+						{creature.room ? getRooms(creature.room) : "-"}
+					</div>
+					<div className="jobs">
+						<h4>Jobs</h4>
+						{getJobs(creature)}
+					</div>
+				</div>
+				<div className="abilities">
 					<h4>Abilities</h4>
 					{getAbilities(creature)}
-				</div>
-				<div>
-					<h4>Spells</h4>
-					{getSpells(creature.spells)}
 				</div>
 			</section>
 		</div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Creature, Multitype } from "@/data/interfaces";
 
 const levels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
@@ -8,7 +9,7 @@ export const getRooms = (rooms: any) => {
 			{Object.keys(rooms).map(function (key) {
 				return (
 					<>
-						<img key={key} alt={key} src={`/images/icons/rooms/${key}.png`} width="20" height="20" />
+						<Image key={key} alt={key} src={`/images/icons/rooms/${key}.png`} width="20" height="20" />
 						{rooms[key]}
 					</>
 				);
@@ -45,19 +46,19 @@ export const getAbilities = (creature: Creature) => {
 			<tbody>
 				<tr>
 					<td>
-						<img alt="training" src={`/images/icons/rooms/training.png`} />
+						<Image alt="training" src={`/images/icons/rooms/training.png`} />
 					</td>
 					<td>{creature.skillTraining}</td>
 				</tr>
 				<tr>
 					<td>
-						<img alt="research" src={`/images/icons/rooms/research.png`} />
+						<Image alt="research" src={`/images/icons/rooms/research.png`} />
 					</td>
 					<td>{creature.research.skill}</td>
 				</tr>
 				<tr>
 					<td>
-						<img alt="manufacturing" src={`/images/icons/rooms/workshop.png`} />
+						<Image alt="manufacturing" src={`/images/icons/rooms/workshop.png`} />
 					</td>
 					<td>{creature.manufacture.skill}</td>
 				</tr>

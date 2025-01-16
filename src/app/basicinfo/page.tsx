@@ -12,12 +12,12 @@ export default function Home() {
 			<h1>Basic Info</h1>
 			<section key="creatures" className="gallery">
 				{creatures.map((x: Creature) => (
-					<Card {...x} />
+					<Card key={x.textId} {...x} />
 				))}
 			</section>
 			<section key="heroes" className="gallery">
 				{heroes.map((x: Creature) => (
-					<Card {...x} />
+					<Card key={x.textId} {...x} />
 				))}
 			</section>
 		</>

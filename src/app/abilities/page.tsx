@@ -46,7 +46,7 @@ export default function Home() {
 				<h1>Research</h1>
 				<br />
 				{[5, 4, 3, 2, 1, 0].map((num) => (
-					<div className="gallery-list">
+					<div key={`research-${num}`} className="gallery-list">
 						<div className="num-square">
 							<h1>{num}</h1>
 						</div>
@@ -61,7 +61,7 @@ export default function Home() {
 				<h1>Manufacturing</h1>
 				<br />
 				{[4, 3, 2, 1, 0].map((num) => (
-					<div className="gallery-list">
+					<div key={`manufacturing-${num}`} className="gallery-list">
 						<div className="num-square">
 							<h1>{num}</h1>
 						</div>
@@ -76,7 +76,7 @@ export default function Home() {
 				<h1>Training</h1>
 				<br />
 				{[4, 3, 2, 1].map((num) => (
-					<div className="gallery-list">
+					<div key={`training-${num}`} className="gallery-list">
 						<div className="num-square">
 							<h1>{num}</h1>
 						</div>

@@ -9,7 +9,7 @@ export default function Home() {
 
 	return (
 		<>
-			<h2>Basic Info</h2>
+			<h1>Basic Info</h1>
 			<section key="creatures" className="gallery">
 				{creatures.map((x: Creature) => (
 					<Card {...x} />

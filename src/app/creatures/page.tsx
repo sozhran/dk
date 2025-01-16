@@ -11,12 +11,12 @@ export default function CreaturesPage() {
 			<h2>Creatures</h2>
 			<div key="creatures" className="gallery">
 				{creatures.map((x: Creature) => (
-					<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
+					<Image key={x.textId} src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
 				))}
 			</div>
 			<div key="heroes" className="gallery">
 				{heroes.map((x: Creature) => (
-					<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
+					<Image key={x.textId} src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
 				))}
 			</div>
 		</>

@@ -89,6 +89,45 @@ main {
 	gap: 5px;
 }
 
+.num-square {
+	display: flex;
+	width: 60px;
+	height: 60px;
+	justify-content: center;
+	align-items: center;
+	background-image: url(/images/bg-gray.png);
+}
+
+.portrait-square {
+	display: flex;
+	width: 60px;
+	height: 60px;
+	min-width: 60px;
+	min-height: 60px;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-primary-job {
+	background-color: #172554;
+}
+
+.bg-secondary-job {
+	background-color: #052e16;
+}
+
+.bg-refuse-job {
+	background-color: #450a0a;
+}
+
+.bg-stripe1 {
+	background-color: #101010;
+}
+
+.bg-stripe2 {
+	background-color: #161616;
+}
+
 .gallery {
 	display: flex;
 	flex-direction: row;
@@ -97,6 +136,18 @@ main {
 	margin-top: 25px;
 	gap: 25px;
 	width: 100%;
+}
+
+.imagelist {
+	display: flex;
+	flex-direction: row;
+}
+
+.gallery-list {
+	display: grid;
+	grid-template-columns: 60px 600px 600px;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .creature-gallery {

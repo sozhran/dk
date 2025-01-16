@@ -1,0 +1,16 @@
+export const Rooms = [
+	{ id: 1, name: "Treasure Room", textId: "treasure" },
+	{ id: 2, name: "Lair", textId: "lair" },
+	{ id: 3, name: "Hatchery", textId: "garden" },
+	{ id: 4, name: "Training Room", textId: "training" },
+	{ id: 5, name: "Library", textId: "research" },
+	{ id: 6, name: "Bridge", textId: "bridge" },
+	{ id: 7, name: "Guard Post", textId: "guard_post" },
+	{ id: 8, name: "Workshop", textId: "workshop" },
+	{ id: 9, name: "Prison", textId: "prison" },
+	{ id: 10, name: "Torture Chamber", textId: "torture" },
+	{ id: 11, name: "Barracks", textId: "barracks" },
+	{ id: 12, name: "Temple", textId: "temple" },
+	{ id: 13, name: "Graveyard", textId: "graveyard" },
+	{ id: 14, name: "Scavenger Room", textId: "scavenger" },
+];

@@ -1,4 +1,4 @@
-import { Creature, Multitype } from "../data/Interfaces";
+import { Creature, Multitype } from "@/data/interfaces";
 
 const levels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
@@ -8,7 +8,7 @@ export const getRooms = (rooms: any) => {
 			{Object.keys(rooms).map(function (key) {
 				return (
 					<>
-						<img key={key} alt={key} src={`/images/rooms/${key}.png`} width="auto" height="auto" />
+						<img key={key} alt={key} src={`/images/icons/rooms/${key}.png`} width="20" height="20" />
 						{rooms[key]}
 					</>
 				);
@@ -40,25 +40,28 @@ export const getSpells = (spells: any) => {
 export const getAbilities = (creature: Creature) => {
 	return (
 		<table className="tabel">
-			<tr>
-				<td>
-					<img alt="training" src={`/images/rooms/trainingroom.png`} />
-				</td>
-				<td>{creature.skillTraining}</td>
-			</tr>
-			<tr>
-				<td>
-					<img alt="research" src={`/images/rooms/library.png`} />
-				</td>
-				<td>{creature.research.skill}</td>
-			</tr>
-			<tr>
-				<td>
-					<img alt="manufacturing" src={`/images/rooms/workshop.png`} />
-				</td>
-				<td>{creature.manufacture.skill}</td>
-			</tr>
-			<p></p>
+			<caption>Creature Abilities</caption>
+			<thead></thead>
+			<tbody>
+				<tr>
+					<td>
+						<img alt="training" src={`/images/icons/rooms/training.png`} />
+					</td>
+					<td>{creature.skillTraining}</td>
+				</tr>
+				<tr>
+					<td>
+						<img alt="research" src={`/images/icons/rooms/research.png`} />
+					</td>
+					<td>{creature.research.skill}</td>
+				</tr>
+				<tr>
+					<td>
+						<img alt="manufacturing" src={`/images/icons/rooms/workshop.png`} />
+					</td>
+					<td>{creature.manufacture.skill}</td>
+				</tr>
+			</tbody>
 		</table>
 	);
 };

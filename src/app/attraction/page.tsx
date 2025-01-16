@@ -1,6 +1,6 @@
-import Card from "@/components/Card";
-import { Creature } from "@/data/interfaces";
-import { Creatures } from "@/data/creatures";
+import Image from "next/image";
+import { Creature, Room, Spell } from "@/data/interfaces";
+import { Creatures, Spells, Rooms } from "@/data/creatures";
 
 export default function Home() {
 	const creatures = Creatures.filter((creature: Creature) => creature.faction === "Creatures");
@@ -8,15 +8,15 @@ export default function Home() {
 
 	return (
 		<>
-			<h1>DK</h1>
+			<h1>Attraction</h1>
 			<section key="creatures" className="gallery">
 				{creatures.map((x: Creature) => (
-					<Card {...x} />
+					<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
 				))}
 			</section>
 			<section key="heroes" className="gallery">
 				{heroes.map((x: Creature) => (
-					<Card {...x} />
+					<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
 				))}
 			</section>
 		</>

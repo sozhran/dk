@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Card from "@/components/Card";
 import { Creature } from "@/data/interfaces";
 import { Creatures } from "@/data/creatures";
@@ -8,7 +9,7 @@ export default function Home() {
 
 	return (
 		<>
-			<h1>DK</h1>
+			<h2>Basic Info</h2>
 			<section key="creatures" className="gallery">
 				{creatures.map((x: Creature) => (
 					<Card {...x} />

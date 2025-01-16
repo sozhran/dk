@@ -41,9 +41,46 @@ h2 {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	color: var(--foreground);
 	background: var(--background);
-	font-family: Arial, Helvetica, sans-serif;
+	min-height: 100vh;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+main {
+	flex-grow: 1;
+}
+
+.header {
+	background-image: url(/images/bg-button.png);
+}
+
+.header-top {
+	display: grid;
+	grid-template-columns: 120px auto 120px;
+	height: 100px;
+}
+
+.header-top > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.header-navigation {
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	align-items: top;
+}
+
+.header-navigation > h3 {
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .line {
@@ -60,6 +97,12 @@ body {
 	margin-top: 25px;
 	gap: 25px;
 	width: 100%;
+}
+
+.creature-gallery {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .noresize > img {
@@ -121,3 +164,12 @@ body {
 }
 
 /*.critroom, critspells {}*/
+
+.footer {
+	height: 60px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}

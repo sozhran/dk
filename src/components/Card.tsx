@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { Creature, Room, Spell } from "@/app/data/Interfaces";
-import { getAbilities, getRooms, getSpells, getJobs } from "../functions/getInfo";
+import { Creature, Room, Spell } from "@/data/interfaces";
+import { getAbilities, getRooms, getSpells, getJobs } from "@/functions/getInfo";
 
 export default function Card(creature: Creature) {
 	return (
 		<div key={creature.name} className="creature-card">
 			<section className="top">
-				<Image key={creature.textId} alt={creature.name} src={`/images/creature_portraits/${creature.textId}.png`} width={48} height={48} />
+				<Image key={creature.textId} alt={creature.name} src={`/images/small/portraits/${creature.textId}.png`} width={48} height={48} />
 				<div className="critname">
 					<h2>{creature.name}</h2>
 				</div>

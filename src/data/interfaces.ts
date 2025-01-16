@@ -21,7 +21,7 @@ export interface Creature {
 	level10Cost: number | null;
 	flying: boolean;
 	undead: boolean;
-	hates: number | null;
+	hates: string | null;
 	immune: string[] | null;
 	spells: {};
 }

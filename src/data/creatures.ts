@@ -1,4 +1,4 @@
-import { Creature, Room, Spell } from "./Interfaces";
+import { Creature } from "@/data/interfaces";
 
 export const Creatures: Creature[] = [
 	{
@@ -132,7 +132,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 26068,
 		flying: false,
 		undead: false,
-		hates: 22,
+		hates: "skeleton",
 		immune: ["Gas"],
 		spells: { "1": "Hand to Hand", "2": "Poison Cloud", "4": "Fart", "7": "Grenade" },
 	},
@@ -159,7 +159,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 11640,
 		flying: false,
 		undead: false,
-		hates: 21,
+		hates: "samurai",
 		immune: null,
 		spells: { "1": "Hand to Hand", "6": "Lightning", "7": "Speed", "9": "Drain", "10": "Teleport" },
 	},
@@ -186,7 +186,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 10290,
 		flying: false,
 		undead: false,
-		hates: 14,
+		hates: "hell_hound",
 		immune: ["Lava"],
 		spells: { "1": "Hand to Hand", "4": "Missile", "7": "Heal" },
 	},
@@ -196,7 +196,7 @@ export const Creatures: Creature[] = [
 		name: "Dragon",
 		faction: "Creatures",
 		room: { treasure: 25, lair: 15 },
-		job: { primary: "research:", secondary: "training" },
+		job: { primary: "research", secondary: "training" },
 		skillTraining: 3,
 		research: { skill: 4, willRefuseJob: false },
 		manufacture: { skill: 1, willRefuseJob: false },
@@ -223,7 +223,7 @@ export const Creatures: Creature[] = [
 		name: "Fairy",
 		faction: "Heroes",
 		room: { research: 9, lair: 1 },
-		job: { primary: "research:", secondary: null },
+		job: { primary: "research", secondary: null },
 		skillTraining: 1,
 		research: { skill: 4, willRefuseJob: false },
 		manufacture: { skill: 1, willRefuseJob: false },
@@ -267,7 +267,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 5410,
 		flying: true,
 		undead: false,
-		hates: 23,
+		hates: "spider",
 		immune: null,
 		spells: { "1": "Hand to Hand", "5": "Sight", "8": "Speed" },
 	},
@@ -277,7 +277,7 @@ export const Creatures: Creature[] = [
 		name: "Ghost",
 		faction: "Creatures",
 		room: { temple: 4, torture: 1 },
-		job: { primary: "worship", secondary: "research:" },
+		job: { primary: "worship", secondary: "research" },
 		skillTraining: 1,
 		research: { skill: 2, willRefuseJob: false },
 		manufacture: { skill: 1, willRefuseJob: false },
@@ -375,7 +375,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 123000,
 		flying: false,
 		undead: false,
-		hates: 7,
+		hates: "demonspawn",
 		immune: ["Lava"],
 		spells: { "1": "Hand to Hand", "3": "Speed", "5": "Flame Breath" },
 	},
@@ -439,7 +439,7 @@ export const Creatures: Creature[] = [
 		name: "Monk",
 		faction: "Heroes",
 		room: { temple: 8 },
-		job: { primary: "research:", secondary: null },
+		job: { primary: "research", secondary: null },
 		skillTraining: 1,
 		research: { skill: 3, willRefuseJob: false },
 		manufacture: { skill: 2, willRefuseJob: false },
@@ -520,7 +520,7 @@ export const Creatures: Creature[] = [
 		name: "Priestess",
 		faction: "Heroes",
 		room: { research: 9, scavenger: 1 },
-		job: { primary: "research:", secondary: null },
+		job: { primary: "research", secondary: null },
 		skillTraining: 2,
 		research: { skill: 3, willRefuseJob: false },
 		manufacture: { skill: 1, willRefuseJob: false },
@@ -564,7 +564,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 12050,
 		flying: false,
 		undead: false,
-		hates: 6,
+		hates: "dark_mistress",
 		immune: null,
 		spells: { "1": "Hand to Hand", "5": "Sight", "6": "Lightning", "7": "Speed", "9": "Freeze" },
 	},
@@ -591,7 +591,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 6820,
 		flying: false,
 		undead: true,
-		hates: 5,
+		hates: "bile_demon",
 		immune: ["Gas"],
 		spells: { "1": "Hand to Hand", "5": "Armour", "10": "Lightning" },
 	},
@@ -618,7 +618,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 24804,
 		flying: false,
 		undead: false,
-		hates: 10,
+		hates: "fly",
 		immune: null,
 		spells: { "1": "Hand to Hand", "2": "Slow", "4": "Freeze", "10": "Hailstorm" },
 	},
@@ -736,7 +736,7 @@ export const Creatures: Creature[] = [
 		name: "Vampire",
 		faction: "Creatures",
 		room: { graveyard: 30, lair: 9 },
-		job: { primary: "scavenging", secondary: "research:" },
+		job: { primary: "scavenging", secondary: "research" },
 		skillTraining: 4,
 		research: { skill: 3, willRefuseJob: false },
 		manufacture: { skill: 1, willRefuseJob: true },
@@ -753,7 +753,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 43600,
 		flying: false,
 		undead: true,
-		hates: 29,
+		hates: "sorceror",
 		immune: ["Gas"],
 		spells: { "1": "Hand to Hand", "2": "Flight", "3": "Slow", "4": "Teleport", "5": "Heal", "6": "Drain", "7": "Armour", "8": "Wind", "10": "Word of Power" },
 	},
@@ -763,7 +763,7 @@ export const Creatures: Creature[] = [
 		name: "Warlock",
 		faction: "Creatures",
 		room: { research: 9 },
-		job: { primary: "research:", secondary: null },
+		job: { primary: "research", secondary: null },
 		skillTraining: 2,
 		research: { skill: 5, willRefuseJob: false },
 		manufacture: { skill: 1, willRefuseJob: true },
@@ -780,7 +780,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 20580,
 		flying: false,
 		undead: false,
-		hates: 28,
+		hates: "vampire",
 		immune: null,
 		spells: { "1": "Hand to Hand", "2": "Fireball", "3": "Heal", "4": "Meteor", "5": "Invisibility", "6": "Navigating Missile", "7": "Sight", "8": "Wind", "9": "Word of Power" },
 	},
@@ -790,7 +790,7 @@ export const Creatures: Creature[] = [
 		name: "Wizard",
 		faction: "Heroes",
 		room: { research: 9 },
-		job: { primary: "research:", secondary: null },
+		job: { primary: "research", secondary: null },
 		skillTraining: 2,
 		research: { skill: 4, willRefuseJob: false },
 		manufacture: { skill: 1, willRefuseJob: true },
@@ -817,7 +817,7 @@ export const Creatures: Creature[] = [
 		name: "Time Mage",
 		faction: "Heroes",
 		room: { research: 12, temple: 3 },
-		job: { primary: "research:", secondary: null },
+		job: { primary: "research", secondary: "worship" },
 		skillTraining: 2,
 		research: { skill: 4, willRefuseJob: false },
 		manufacture: { skill: 1, willRefuseJob: true },
@@ -834,7 +834,7 @@ export const Creatures: Creature[] = [
 		level10Cost: 20580,
 		flying: false,
 		undead: false,
-		hates: 28,
+		hates: null,
 		immune: null,
 		spells: { "1": "Hand to Hand", "2": "Fireball", "3": "Heal", "4": "Meteor", "5": "Invisibility", "6": "Navigating Missile", "7": "Sight", "8": "Wind", "9": "Word of Power" },
 	},
@@ -844,7 +844,7 @@ export const Creatures: Creature[] = [
 		name: "Druid",
 		faction: "Creatures",
 		room: { research: 9, guard_post: 4 },
-		job: { primary: "research:", secondary: null },
+		job: { primary: "research", secondary: "guarding" },
 		skillTraining: 2,
 		research: { skill: 4, willRefuseJob: false },
 		manufacture: { skill: 0, willRefuseJob: false },
@@ -866,96 +866,3 @@ export const Creatures: Creature[] = [
 		spells: { "1": ["Hand to Hand", "Missile"], "3": "Fireball", "5": ["Rebound", "Heal"], "6": "Freeze", "7": "Hailstorm", "8": "Drain", "9": "Slow", "10": "Meteor" },
 	},
 ];
-
-export const Spells: Spell[] = [
-	{ id: 1, name: "Arrow", textId: "arrow" },
-	{ id: 2, name: "Dig", textId: "dig" },
-	{ id: 3, name: "Drain", textId: "drain" },
-	{ id: 4, name: "Fart", textId: "fart" },
-	{ id: 5, name: "Fireball", textId: "fireball" },
-	{ id: 6, name: "Flame Breath", textId: "flamebreath" },
-	{ id: 7, name: "Flight", textId: "flight" },
-	{ id: 8, name: "Freeze", textId: "freeze" },
-	{ id: 9, name: "Grenade", textId: "grenade" },
-	{ id: 10, name: "Hailstorm", textId: "hailstorm" },
-	{ id: 11, name: "Hand to Hand", textId: "handtohand" },
-	{ id: 12, name: "Heal", textId: "heal" },
-	{ id: 13, name: "Invisibility", textId: "invisibility" },
-	{ id: 14, name: "Lightning", textId: "lightning" },
-	{ id: 15, name: "Meteor", textId: "meteor" },
-	{ id: 16, name: "Missile", textId: "missile" },
-	{ id: 17, name: "Navigating Missile", textId: "navigatingmissile" },
-	{ id: 18, name: "Poison Cloud", textId: "poisoncloud" },
-	{ id: 19, name: "Rebound", textId: "rebound" },
-	{ id: 20, name: "Sight", textId: "sight" },
-	{ id: 21, name: "Slow", textId: "slow" },
-	{ id: 22, name: "Speed", textId: "speed" },
-	{ id: 23, name: "Teleport", textId: "teleport" },
-	{ id: 24, name: "Wind", textId: "wind" },
-	{ id: 25, name: "Word of Power", textId: "wordofpower" },
-];
-export const Rooms: Room[] = [
-	{ id: 1, name: "Treasure Room", textId: "treasure" },
-	{ id: 2, name: "Lair", textId: "lair" },
-	{ id: 3, name: "Hatchery", textId: "garden" },
-	{ id: 4, name: "Training Room", textId: "training" },
-	{ id: 5, name: "Library", textId: "research" },
-	{ id: 6, name: "Bridge", textId: "bridge" },
-	{ id: 7, name: "Guard Post", textId: "guard_post" },
-	{ id: 8, name: "Workshop", textId: "workshop" },
-	{ id: 9, name: "Prison", textId: "prison" },
-	{ id: 10, name: "Torture Chamber", textId: "torture" },
-	{ id: 11, name: "Barracks", textId: "barracks" },
-	{ id: 12, name: "Temple", textId: "temple" },
-	{ id: 13, name: "Graveyard", textId: "graveyard" },
-	{ id: 14, name: "Scavenger Room", textId: "scavenger" },
-];
-
-// check the table against indivudual pages
-// confirm Giant, Ghost attraction
-
-//ROOM_AVAILABLE(ALL_PLAYERS,TREASURE,1,1)
-//ROOM_AVAILABLE(ALL_PLAYERS,LAIR,1,1)
-//ROOM_AVAILABLE(ALL_PLAYERS,GARDEN,1,1)
-//ROOM_AVAILABLE(ALL_PLAYERS,TRAINING,1,1)
-//ROOM_AVAILABLE(ALL_PLAYERS,RESEARCH,1,1)
-//ROOM_AVAILABLE(ALL_PLAYERS,BRIDGE,1,0)
-//ROOM_AVAILABLE(ALL_PLAYERS,GUARD_POST,1,0)
-//ROOM_AVAILABLE(ALL_PLAYERS,WORKSHOP,1,0)
-//ROOM_AVAILABLE(ALL_PLAYERS,PRISON,1,0)
-//ROOM_AVAILABLE(ALL_PLAYERS,TORTURE,1,0)
-//ROOM_AVAILABLE(ALL_PLAYERS,BARRACKS,1,0)
-//ROOM_AVAILABLE(ALL_PLAYERS,TEMPLE,1,0)
-//ROOM_AVAILABLE(ALL_PLAYERS,GRAVEYARD,1,0)
-//ROOM_AVAILABLE(ALL_PLAYERS,SCAVENGER,1,0)
-
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_HAND,1,1)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_SLAP,1,1)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_POSSESS,1,1)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_IMP,1,1)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_SIGHT,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_SPEED,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_OBEY,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_CALL_TO_ARMS,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_CONCEAL,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_HOLD_AUDIENCE,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_CAVE_IN,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_HEAL_CREATURE,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_LIGHTNING,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_PROTECT,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_CHICKEN,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_DISEASE,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_ARMAGEDDON,1,0)
-//MAGIC_AVAILABLE(ALL_PLAYERS,POWER_DESTROY_WALLS,1,0)
-
-//TRAP_AVAILABLE(ALL_PLAYERS,ALARM,1,0)
-//TRAP_AVAILABLE(ALL_PLAYERS,POISON_GAS,1,0)
-//TRAP_AVAILABLE(ALL_PLAYERS,LIGHTNING,1,0)
-//TRAP_AVAILABLE(ALL_PLAYERS,LAVA,1,0)
-//TRAP_AVAILABLE(ALL_PLAYERS,BOULDER,1,0)
-//TRAP_AVAILABLE(ALL_PLAYERS,WORD_OF_POWER,1,0)
-
-//DOOR_AVAILABLE(ALL_PLAYERS,WOOD,1,0)
-//DOOR_AVAILABLE(ALL_PLAYERS,BRACED,1,0)
-//DOOR_AVAILABLE(ALL_PLAYERS,STEEL,1,0)
-//DOOR_AVAILABLE(ALL_PLAYERS,MAGIC,1,0)

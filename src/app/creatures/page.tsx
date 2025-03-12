@@ -3,8 +3,8 @@ import { Creature } from "@/data/interfaces";
 import { Creatures } from "@/data/creatures";
 
 export default function CreaturesPage() {
-	const creatures = Creatures.filter((creature: Creature) => creature.faction === "Creatures");
-	const heroes = Creatures.filter((creature: Creature) => creature.faction === "Heroes");
+	const creatures = Creatures.filter((creature: Creature) => creature.faction === "creatures");
+	const heroes = Creatures.filter((creature: Creature) => creature.faction === "heroes");
 
 	return (
 		<>

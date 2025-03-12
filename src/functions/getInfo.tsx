@@ -53,19 +53,19 @@ export const getAbilities = (creature: Creature) => {
 					<td>
 						<Image alt="training" src={`/images/icons/rooms/training.png`} width={19} height={22} />
 					</td>
-					<td>{creature.trainingSkill}</td>
+					<td>{creature.training.skill}</td>
 				</tr>
 				<tr>
 					<td>
 						<Image alt="research" src={`/images/icons/rooms/research.png`} width={13} height={22} />
 					</td>
-					<td>{creature.research.baseSkill}</td>
+					<td>{creature.researchSkill}</td>
 				</tr>
 				<tr>
 					<td>
 						<Image alt="manufacturing" src={`/images/icons/rooms/workshop.png`} width={23} height={24} />
 					</td>
-					<td>{creature.manufacture.baseSkill}</td>
+					<td>{creature.manufactureSkill}</td>
 				</tr>
 			</tbody>
 		</table>

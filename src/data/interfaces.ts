@@ -5,11 +5,12 @@ export interface Creature {
 	faction: "creatures" | "heroes";
 	room: {} | null;
 	job: { primary: Multitype; secondary: Multitype };
-	training: { baseSkill: number; cost: number };
-	research: { baseSkill: number; willRefuseJob: boolean };
-	manufacture: { baseSkill: number; willRefuseJob: boolean };
-	attack: "melee" | "ranged";
-	trainingCost: number;
+	willRefuseJobs: string[];
+	training: { skill: number, cost: number };
+	researchSkill: number;
+	manufactureSkill: number;
+	scavenger: { skill: number | null; cost: number | null };
+	attackPreference: "melee" | "ranged";
 	baseWage: number;
 	baseHealth: number;
 	baseStrength: number;
@@ -22,15 +23,12 @@ export interface Creature {
 	undead: boolean;
 	hates: string | null;
 	immune: string[] | null;
-	spells: {};
-	slapAnger: number,
-	prayingAnger: number;
-	sleepingAnger: number;
 	sleepRecovery: number;
+	tortureTime: number;
+	spells: {};
 	hunger: { chickens: number; rate: number };
-	angerJobs: string[];
-	scavengerBaseSkill: number | null;
-	scavengerCost: number | null;
+	anger: { slap: number; torture: number; hatedJob: number; postal: number, queue: number, untrained: [number, number], notPaid: number; gotPaid: number; killEnemy: number; pray: number; sleep: number };
+	angerJobs: string[] | null
 }
 
 export interface Room {

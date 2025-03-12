@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Card from "@/components/Card";
 import { Creature } from "@/data/interfaces";
 import { Creatures } from "@/data/creatures";
 
@@ -8,20 +7,25 @@ export default function Home() {
 	let heroes = Creatures.filter((x: Creature) => x.faction === "heroes");
 
 	function filterResearch(num: number, list: Creature[]) {
-		let filteredList = list.filter((x) => x.research.baseSkill === num);
+		let filteredList = list.filter((x) => x.researchSkill === num);
 		return filteredList.map((x: Creature) => (
-			<div key={x.textId} className={`portrait-square ${x.job.primary === "research" ? "bg-primary-job" : ""} ${x.job.secondary === "research" ? "bg-secondary-job" : ""} ${x.research.willRefuseJob === true ? "bg-refuse-job" : ""}`}>
+			<div
+				key={x.textId}
+				className={`portrait-square ${x.job.primary === "research" ? "bg-primary-job" : ""} ${x.job.secondary === "research" ? "bg-secondary-job" : ""} ${x.willRefuseJobs.includes("research") === true ? "bg-refuse-job" : ""}`}
+			>
 				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
 			</div>
 		));
 	}
 
 	function filterWorkshop(num: number, list: Creature[]) {
-		let filteredList = list.filter((x: Creature) => x.manufacture.baseSkill === num);
+		let filteredList = list.filter((x: Creature) => x.manufactureSkill === num);
 		return filteredList.map((x: Creature) => (
 			<div
 				key={x.textId}
-				className={`portrait-square ${x.job.primary === "manufacturing" ? "bg-primary-job" : ""} ${x.job.secondary === "manufacturing" ? "bg-secondary-job" : ""} ${x.manufacture.willRefuseJob === true ? "bg-refuse-job" : ""}`}
+				className={`portrait-square ${x.job.primary === "manufacturing" ? "bg-primary-job" : ""} ${x.job.secondary === "manufacturing" ? "bg-secondary-job" : ""} ${
+					x.willRefuseJobs.includes("manufacturing") === true ? "bg-refuse-job" : ""
+				}`}
 			>
 				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
 			</div>
@@ -29,7 +33,7 @@ export default function Home() {
 	}
 
 	function filterTraining(num: number, list: Creature[]) {
-		let filteredList = list.filter((x: Creature) => x.trainingSkill === num);
+		let filteredList = list.filter((x: Creature) => x.training.skill === num);
 		return filteredList.map((x: Creature) => (
 			<div key={x.textId} className={`portrait-square ${x.job.primary === "training" ? "bg-primary-job" : ""} ${x.job.secondary === "training" ? "bg-secondary-job" : ""}`}>
 				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />

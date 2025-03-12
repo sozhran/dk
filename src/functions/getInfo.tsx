@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { Creature, Multitype } from "@/data/interfaces";
 
-const levels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+export const levels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+export const modifiers = [1.0, 1.35, 1.7, 2.05, 2.4, 2.75, 3.1, 3.45, 3.8, 4.15];
+
+export const seeModifiedStats = () => {
+	[1, 2, 3, 4, 5].forEach((elm) => console.log(modifiers.map((mod) => mod * elm)));
+};
 
 export const getRooms = (rooms: any) => {
 	return (
@@ -46,21 +51,21 @@ export const getAbilities = (creature: Creature) => {
 			<tbody>
 				<tr>
 					<td>
-						<Image alt="training" src={`/images/icons/rooms/training.png`} />
+						<Image alt="training" src={`/images/icons/rooms/training.png`} width={19} height={22} />
 					</td>
-					<td>{creature.skillTraining}</td>
+					<td>{creature.trainingSkill}</td>
 				</tr>
 				<tr>
 					<td>
-						<Image alt="research" src={`/images/icons/rooms/research.png`} />
+						<Image alt="research" src={`/images/icons/rooms/research.png`} width={13} height={22} />
 					</td>
-					<td>{creature.research.skill}</td>
+					<td>{creature.research.baseSkill}</td>
 				</tr>
 				<tr>
 					<td>
-						<Image alt="manufacturing" src={`/images/icons/rooms/workshop.png`} />
+						<Image alt="manufacturing" src={`/images/icons/rooms/workshop.png`} width={23} height={24} />
 					</td>
-					<td>{creature.manufacture.skill}</td>
+					<td>{creature.manufacture.baseSkill}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -77,3 +82,9 @@ export const getJobs = (creature: Creature) => {
 		</>
 	);
 };
+
+//SKILL 1:  [1, 1, 1, 2, 2, 2, 3, 3, 3, 4]
+//SKILL 2:  [2, 2, 3, 4, 4, 5, 6, 6, 7, 8]
+//SKILL 3:  [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+//SKILL 4:  [4, 5, 6, 8, 9, 11, 12, 13, 15, 16]
+//SKILL 5:  [5, 6, 8, 10, 12, 13, 15, 17, 19, 20]

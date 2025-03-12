@@ -4,11 +4,11 @@ import { Creature } from "@/data/interfaces";
 import { Creatures } from "@/data/creatures";
 
 export default function Home() {
-	let creatures = Creatures.filter((x: Creature) => x.faction === "Creatures");
-	let heroes = Creatures.filter((x: Creature) => x.faction === "Heroes");
+	let creatures = Creatures.filter((x: Creature) => x.faction === "creatures");
+	let heroes = Creatures.filter((x: Creature) => x.faction === "heroes");
 
 	function filterResearch(num: number, list: Creature[]) {
-		let filteredList = list.filter((x) => x.research.skill === num);
+		let filteredList = list.filter((x) => x.research.baseSkill === num);
 		return filteredList.map((x: Creature) => (
 			<div key={x.textId} className={`portrait-square ${x.job.primary === "research" ? "bg-primary-job" : ""} ${x.job.secondary === "research" ? "bg-secondary-job" : ""} ${x.research.willRefuseJob === true ? "bg-refuse-job" : ""}`}>
 				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
@@ -17,7 +17,7 @@ export default function Home() {
 	}
 
 	function filterWorkshop(num: number, list: Creature[]) {
-		let filteredList = list.filter((x: Creature) => x.manufacture.skill === num);
+		let filteredList = list.filter((x: Creature) => x.manufacture.baseSkill === num);
 		return filteredList.map((x: Creature) => (
 			<div
 				key={x.textId}
@@ -29,7 +29,7 @@ export default function Home() {
 	}
 
 	function filterTraining(num: number, list: Creature[]) {
-		let filteredList = list.filter((x: Creature) => x.skillTraining === num);
+		let filteredList = list.filter((x: Creature) => x.trainingSkill === num);
 		return filteredList.map((x: Creature) => (
 			<div key={x.textId} className={`portrait-square ${x.job.primary === "training" ? "bg-primary-job" : ""} ${x.job.secondary === "training" ? "bg-secondary-job" : ""}`}>
 				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />

@@ -2,28 +2,35 @@ export interface Creature {
 	id: number;
 	textId: string;
 	name: string;
-	faction: "Creatures" | "Heroes";
+	faction: "creatures" | "heroes";
 	room: {} | null;
 	job: { primary: Multitype; secondary: Multitype };
-	skillTraining: number;
-	research: { skill: number; willRefuseJob: boolean };
-	manufacture: { skill: number; willRefuseJob: boolean };
-	attack: "Melee" | "Ranged";
+	training: { baseSkill: number; cost: number };
+	research: { baseSkill: number; willRefuseJob: boolean };
+	manufacture: { baseSkill: number; willRefuseJob: boolean };
+	attack: "melee" | "ranged";
 	trainingCost: number;
-	salary: number;
-	health: number;
-	strength: number;
-	dexterity: number;
-	defence: number;
+	baseWage: number;
+	baseHealth: number;
+	baseStrength: number;
+	baseDexterity: number;
+	baseDefence: number;
 	armour: number;
-	speed: number;
+	movementSpeed: number;
 	luck: number;
-	level10Cost: number | null;
 	flying: boolean;
 	undead: boolean;
 	hates: string | null;
 	immune: string[] | null;
 	spells: {};
+	slapAnger: number,
+	prayingAnger: number;
+	sleepingAnger: number;
+	sleepRecovery: number;
+	hunger: { chickens: number; rate: number };
+	angerJobs: string[];
+	scavengerBaseSkill: number | null;
+	scavengerCost: number | null;
 }
 
 export interface Room {

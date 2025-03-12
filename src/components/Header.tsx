@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Creature, Room, Spell } from "@/data/interfaces";
-import { getAbilities, getRooms, getSpells, getJobs } from "@/functions/getInfo";
 
 export default function Header() {
 	return (
@@ -18,7 +16,7 @@ export default function Header() {
 			</div>
 			<div className="header-navigation">
 				<h3>
-					<a href="/basicinfo">Basic Info</a>
+					<a href="/">Basic Info</a>
 				</h3>
 				<h3>
 					<a href="/creatures">Creatures</a>

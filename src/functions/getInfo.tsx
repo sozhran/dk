@@ -1,11 +1,28 @@
 import Image from "next/image";
 import { Creature, Multitype } from "@/data/interfaces";
+import { Creatures } from "@/data/creatures";
 
 export const levels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 export const modifiers = [1.0, 1.35, 1.7, 2.05, 2.4, 2.75, 3.1, 3.45, 3.8, 4.15];
 
-export const seeModifiedStats = () => {
-	[1, 2, 3, 4, 5].forEach((elm) => console.log(modifiers.map((mod) => mod * elm)));
+export const getScaledStat = (stat: number, speed: number | null) => {
+	const result = [stat.toString()];
+
+	for (let i = 2; i < 11; i++) {
+		result.push(speed && speed <= i ? `${i} (${i * 2})` : `${i}`);
+	}
+
+	return result;
+};
+
+export const checkIfHasSpeed = (creature: Creature) => {
+	for (const [key, value] of Object.entries(creature.spells)) {
+		if (value === "Speed") {
+			return parseInt(key);
+		} else {
+			return null;
+		}
+	}
 };
 
 export const getRooms = (rooms: any) => {

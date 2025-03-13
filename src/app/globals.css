@@ -25,6 +25,9 @@
 	}
 }
 
+@media screen {
+}
+
 h1,
 h2,
 h3,
@@ -43,6 +46,10 @@ h2 {
 body {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	padding-left: 50px;
+	padding-right: 50px;
+	width: 100%;
 	height: 100%;
 	color: var(--foreground);
 	background: var(--background);
@@ -55,7 +62,7 @@ main {
 }
 
 .header {
-	background-image: url(/images/bg-button.png);
+	background-image: url(/images/bg-header.png);
 }
 
 .header-top {
@@ -128,7 +135,14 @@ main {
 	background-color: #161616;
 }
 
-.gallery {
+.divide {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: space-evenly;
+	justify-items: center;
+}
+
+.ggg {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -136,6 +150,15 @@ main {
 	margin-top: 25px;
 	gap: 25px;
 	width: 100%;
+}
+
+.gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 25px;
+	width: 414px;
+	gap: 2px;
 }
 
 .imagelist {

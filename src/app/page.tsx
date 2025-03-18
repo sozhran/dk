@@ -7,7 +7,7 @@ export default function Home() {
 	const creatures = Creatures.filter((creature: Creature) => creature.alignment === "evil");
 	const heroes = Creatures.filter((creature: Creature) => creature.alignment === "good");
 
-	const timemage = heroes.find((crit) => crit.textId === "time_mage");
+	const timemage = heroes.find((crit) => crit.id === "time_mage");
 
 	return (
 		<>

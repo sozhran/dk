@@ -11,17 +11,19 @@ export default function Home() {
 	const styleSelected = { border: "2px solid #ffa500", opacity: 1 };
 	const styleNotSelected = { border: "2px solid #a9a9a9", opacity: 0.7 };
 
-	let creatures = Creatures.filter((x: Creature) => x.faction === "creatures");
-	let heroes = Creatures.filter((x: Creature) => x.faction === "heroes");
+	let creatures = Creatures.filter((x: Creature) => x.alignment === "evil");
+	let heroes = Creatures.filter((x: Creature) => x.alignment === "good");
 
 	function filterResearch(num: number, list: Creature[]) {
 		let filteredList = list.filter((x) => x.researchSkill === num);
 		return filteredList.map((x: Creature) => (
 			<div
-				key={x.textId}
-				className={`portrait-square ${x.job.primary === "research" ? "bg-primary-job" : ""} ${x.job.secondary === "research" ? "bg-secondary-job" : ""} ${x.willRefuseJobs.includes("research") === true ? "bg-refuse-job" : ""}`}
+				key={x.id}
+				className={`portrait-square ${x.job.primary === "research" ? "bg-primary-job" : ""} ${
+					x.job.secondary === "research" ? "bg-secondary-job" : ""
+				} ${x.willRefuseJobs.includes("research") === true ? "bg-refuse-job" : ""}`}
 			>
-				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
+				<Image src={`/images/medium/portraits/${x.id}.png`} alt={x.name} width={48} height={48} />
 			</div>
 		));
 	}
@@ -33,13 +35,13 @@ export default function Home() {
 					{Creatures.map((creature: Creature) => {
 						return (
 							<Image
-								key={creature.textId}
+								key={creature.id}
 								alt={creature.name}
-								src={`/images/small/portraits/${creature.textId}.png`}
+								src={`/images/small/portraits/${creature.id}.png`}
 								width={50}
 								height={50}
-								style={left === creature.textId ? styleSelected : styleNotSelected}
-								onClick={() => setLeft(creature.textId)}
+								style={left === creature.id ? styleSelected : styleNotSelected}
+								onClick={() => setLeft(creature.id)}
 							/>
 						);
 					})}
@@ -48,13 +50,13 @@ export default function Home() {
 					{Creatures.map((creature: Creature) => {
 						return (
 							<Image
-								key={creature.textId}
+								key={creature.id}
 								alt={creature.name}
-								src={`/images/small/portraits/${creature.textId}.png`}
+								src={`/images/small/portraits/${creature.id}.png`}
 								width={50}
 								height={50}
-								style={right === creature.textId ? styleSelected : styleNotSelected}
-								onClick={() => setRight(creature.textId)}
+								style={right === creature.id ? styleSelected : styleNotSelected}
+								onClick={() => setRight(creature.id)}
 							/>
 						);
 					})}

@@ -3,17 +3,19 @@ import { Creature } from "@/data/interfaces";
 import { Creatures } from "@/data/creatures";
 
 export default function Home() {
-	let creatures = Creatures.filter((x: Creature) => x.faction === "creatures");
-	let heroes = Creatures.filter((x: Creature) => x.faction === "heroes");
+	let creatures = Creatures.filter((x: Creature) => x.alignment === "evil");
+	let heroes = Creatures.filter((x: Creature) => x.alignment === "good");
 
 	function filterResearch(num: number, list: Creature[]) {
 		let filteredList = list.filter((x) => x.researchSkill === num);
 		return filteredList.map((x: Creature) => (
 			<div
-				key={x.textId}
-				className={`portrait-square ${x.job.primary === "research" ? "bg-primary-job" : ""} ${x.job.secondary === "research" ? "bg-secondary-job" : ""} ${x.willRefuseJobs.includes("research") === true ? "bg-refuse-job" : ""}`}
+				key={x.id}
+				className={`portrait-square ${x.job.primary === "research" ? "bg-primary-job" : ""} ${
+					x.job.secondary === "research" ? "bg-secondary-job" : ""
+				} ${x.willRefuseJobs.includes("research") === true ? "bg-refuse-job" : ""}`}
 			>
-				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
+				<Image src={`/images/medium/portraits/${x.id}.png`} alt={x.name} width={48} height={48} />
 			</div>
 		));
 	}
@@ -22,12 +24,12 @@ export default function Home() {
 		let filteredList = list.filter((x: Creature) => x.manufactureSkill === num);
 		return filteredList.map((x: Creature) => (
 			<div
-				key={x.textId}
-				className={`portrait-square ${x.job.primary === "manufacturing" ? "bg-primary-job" : ""} ${x.job.secondary === "manufacturing" ? "bg-secondary-job" : ""} ${
-					x.willRefuseJobs.includes("manufacturing") === true ? "bg-refuse-job" : ""
-				}`}
+				key={x.id}
+				className={`portrait-square ${x.job.primary === "manufacturing" ? "bg-primary-job" : ""} ${
+					x.job.secondary === "manufacturing" ? "bg-secondary-job" : ""
+				} ${x.willRefuseJobs.includes("manufacturing") === true ? "bg-refuse-job" : ""}`}
 			>
-				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
+				<Image src={`/images/medium/portraits/${x.id}.png`} alt={x.name} width={48} height={48} />
 			</div>
 		));
 	}
@@ -35,8 +37,13 @@ export default function Home() {
 	function filterTraining(num: number, list: Creature[]) {
 		let filteredList = list.filter((x: Creature) => x.training.skill === num);
 		return filteredList.map((x: Creature) => (
-			<div key={x.textId} className={`portrait-square ${x.job.primary === "training" ? "bg-primary-job" : ""} ${x.job.secondary === "training" ? "bg-secondary-job" : ""}`}>
-				<Image src={`/images/medium/portraits/${x.textId}.png`} alt={x.name} width={48} height={48} />
+			<div
+				key={x.id}
+				className={`portrait-square ${x.job.primary === "training" ? "bg-primary-job" : ""} ${
+					x.job.secondary === "training" ? "bg-secondary-job" : ""
+				}`}
+			>
+				<Image src={`/images/medium/portraits/${x.id}.png`} alt={x.name} width={48} height={48} />
 			</div>
 		));
 	}

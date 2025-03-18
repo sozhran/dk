@@ -1,9 +1,31 @@
 import Image from "next/image";
 import { Creature, Multitype } from "@/data/interfaces";
-import { Creatures } from "@/data/creatures";
 
 export const levels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-export const modifiers = [1.0, 1.35, 1.7, 2.05, 2.4, 2.75, 3.1, 3.45, 3.8, 4.15];
+
+export const getCreaturesWithSpeed = (creatures: Creature[]) => {
+	const result: { [key: string]: string } = {};
+
+	creatures.map((creature: Creature) => {
+		Object.keys(creature.spells).forEach(function (key) {
+			if (typeof creature.spells[key] === "string" && creature.spells[key] === "Speed") {
+				result[creature.id] = key;
+			}
+		});
+	});
+};
+
+export const scaleStat = (base_value: number) => {
+	const result = [];
+
+	result.push(base_value);
+
+	for (let i = 2; i < 11; i++) {
+		result.push(base_value + Math.floor(base_value * 0.35) * (i - 1));
+	}
+
+	return result;
+};
 
 export const getScaledStat = (stat: number, speed: number | null) => {
 	const result = [stat.toString()];

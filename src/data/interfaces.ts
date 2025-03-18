@@ -1,6 +1,5 @@
 export interface Creature {
-	id: number;
-	textId: string;
+	id: string;
 	name: string;
 	alignment: "good" | "evil";
 	room: {} | null;

@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { Creature, Room, Spell } from "@/data/interfaces";
 import { getAbilities, getRooms, getSpells, getJobs } from "@/functions/getInfo";
+import { CardProps } from "./Card";
 
-export type CardProps = { creature: Creature };
-
-export default function Card(props: CardProps) {
+export default function FullCard(props: CardProps) {
 	return (
-		<div key={props.creature.name} className="creature-card">
+		<div key={props.creature.name} className="fullcard">
 			<section className="top">
 				<Image
 					key={props.creature.id}

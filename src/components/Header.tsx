@@ -1,6 +1,13 @@
+"use client";
+import { Creatures } from "@/data/creatures";
+import { Creature } from "@/data/interfaces";
 import Image from "next/image";
 
 export default function Header() {
+	function listExpValues() {
+		Creatures.map((item: Creature) => console.log(`${item.levelTrainValues} (${item.name})`));
+	}
+
 	return (
 		<div key="header" className="header">
 			<div key="header-top" className="header-top">
@@ -33,6 +40,7 @@ export default function Header() {
 				<h3>
 					<a href="/attraction">Attraction</a>
 				</h3>
+				<button onClick={listExpValues}>EXP VALUES</button>
 			</div>
 		</div>
 	);

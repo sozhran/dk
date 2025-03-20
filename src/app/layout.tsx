@@ -3,6 +3,7 @@ import "./reset.css";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
 
 export const metadata: Metadata = {
 	title: "Dungeon Keeper",
@@ -18,6 +19,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<Header />
+				<Navigation />
 				<main>{children}</main>
 				<Footer />
 			</body>

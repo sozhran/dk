@@ -16,36 +16,40 @@ export const getCreaturesWithSpeed = (creatures: Creature[]) => {
 };
 
 export const scaleStat = (base_value: number) => {
-	const result = [];
-
-	result.push(base_value);
+	const result = [base_value];
 
 	for (let i = 2; i < 11; i++) {
-		result.push(base_value + Math.floor(base_value * 0.35) * (i - 1));
+		let raw_stat = base_value + base_value * 0.35 * (i - 1);
+
+		result.push(Math.floor(raw_stat));
 	}
 
 	return result;
 };
 
-export const getScaledStat = (stat: number, speed: number | null) => {
-	const result = [stat.toString()];
+// scales a creature stat from level 1 to level 10 + calculates doubling effect from Speed
+// (since doubling happens before the result is rounded down)
+export const scaleStatWithSpeed = (base_value: number) => {
+	const result = [[base_value, base_value * 2]];
 
 	for (let i = 2; i < 11; i++) {
-		result.push(speed && speed <= i ? `${i} (${i * 2})` : `${i}`);
+		let raw_stat = base_value + base_value * 0.35 * (i - 1);
+
+		result.push([Math.floor(raw_stat), Math.floor(raw_stat * 2)]);
 	}
 
 	return result;
 };
 
-export const checkIfHasSpeed = (creature: Creature) => {
+export function checkIfHasSpeed(creature: Creature) {
 	for (const [key, value] of Object.entries(creature.spells)) {
 		if (value === "Speed") {
 			return parseInt(key);
-		} else {
-			return null;
 		}
 	}
-};
+
+	return null;
+}
 
 export const getRooms = (rooms: any) => {
 	return (

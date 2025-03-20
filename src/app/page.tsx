@@ -1,7 +1,8 @@
 import Card from "@/components/Card";
-import { Creature } from "@/data/interfaces";
+import { Creature, Room } from "@/data/interfaces";
 import { Creatures } from "@/data/creatures";
 import FullCard from "@/components/FullCard";
+import { Rooms } from "@/data/rooms";
 
 export default function Home() {
 	const creatures = Creatures.filter((creature: Creature) => creature.alignment === "evil");
@@ -11,7 +12,6 @@ export default function Home() {
 
 	return (
 		<>
-			<h1>DK</h1>
 			{timemage ? <FullCard creature={timemage} /> : <></>}
 			{/*<section key="creatures" className="gallery">
 				{creatures.map((x: Creature) => (
@@ -23,6 +23,15 @@ export default function Home() {
 					<Card key={x.textId} {...x} />
 				))}
 			</section>*/}
+			<div className="stat-wrapper">
+				{Rooms.map((room: Room) => {
+					return (
+						<div className="ikon-container">
+							<img key={room.textId} alt={room.textId} src={`/images/icons/rooms/${room.textId}.png`} className="ikon" />
+						</div>
+					);
+				})}
+			</div>
 		</>
 	);
 }

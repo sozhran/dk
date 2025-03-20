@@ -1,46 +1,18 @@
 "use client";
-import { Creatures } from "@/data/creatures";
-import { Creature } from "@/data/interfaces";
 import Image from "next/image";
 
 export default function Header() {
-	function listExpValues() {
-		Creatures.map((item: Creature) => console.log(`${item.levelTrainValues} (${item.name})`));
-	}
-
 	return (
 		<div key="header" className="header">
-			<div key="header-top" className="header-top">
-				<div>
-					<Image key="header-horny" alt="header-horny" src={`/images/horny_icon.png`} width={90} height={90}></Image>
-				</div>
-				<div>
-					<h1>Dungeon Keeper</h1>
-				</div>
-				<div>
-					<Image key="unearth-icon" alt="unearth-icon" src={`/images/unearth_icon.png`} width={64} height={64}></Image>
-				</div>
+			<div>
+				<Image key="header-horny" alt="header-horny" src={`/images/horny_icon.png`} width={90} height={90}></Image>
 			</div>
-			<div className="header-navigation">
-				<h3>
-					<a href="/">Basic Info</a>
-				</h3>
-				<h3>
-					<a href="/creatures">Creatures</a>
-				</h3>
-				<h3>
-					<a href="/rooms">Rooms</a>
-				</h3>
-				<h3>
-					<a href="/spells">Spells</a>
-				</h3>
-				<h3>
-					<a href="/abilities">Abilities</a>
-				</h3>
-				<h3>
-					<a href="/attraction">Attraction</a>
-				</h3>
-				<button onClick={listExpValues}>EXP VALUES</button>
+			<div>
+				<h1>Dungeon Keeper</h1>
+				<h4>A fan site</h4>
+			</div>
+			<div>
+				<Image key="unearth-icon" alt="unearth-icon" src={`/images/unearth_icon.png`} width={64} height={64}></Image>
 			</div>
 		</div>
 	);

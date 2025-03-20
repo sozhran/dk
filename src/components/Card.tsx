@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Creature, Room, Spell } from "@/data/interfaces";
-import { getAbilities, getRooms, getSpells, getJobs } from "@/functions/getInfo";
+import { getAbilities, getRooms, getSpells, getJobs } from "@/functions/functions";
 
 export type CardProps = { creature: Creature };
 

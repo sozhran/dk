@@ -6,19 +6,18 @@
 	:root {
 		--side-padding: 120px;
 		--stat-border: theme(colors.amber.950);
+		--border: #161616;
 		--background: #0a0a0a;
 		--foreground: #ededed;
 	}
 }
 @font-face {
 	font-family: cinzel;
-	font-display: swap;
 	src: url(./fonts/Cinzel-Medium.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: nunito;
-	font-display: swap;
 	src: url(/fonts/Nunito-VariableFont_wght.ttf) format("truetype");
 }
 
@@ -40,6 +39,11 @@ h2 {
 	font-size: larger;
 }
 
+div,
+p {
+	font-family: nunito;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -49,21 +53,26 @@ body {
 	width: 100%;
 	height: 100%;
 	color: var(--foreground);
-	background-image: url(/images/bg-black.png);
+	background-image: url(/images/bg-red.png);
 	min-height: 100vh;
 }
 
-a,
-a:visited,
-a:hover,
-a:active {
-	color: inherit;
-	text-decoration: none;
+.graybox {
+	background-image: url(/images/bg-gray.png);
+	background-color: rgba(11, 11, 11, 0.65);
+	background-blend-mode: darken;
+	border: 2px solid;
+	border-color: var(--border);
 }
 
-main {
-	flex-grow: 1;
+.grid-layout {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 50px;
 }
+
+/* HEADER */
 
 .header {
 	display: grid;
@@ -75,7 +84,8 @@ main {
 	background-image: url(/images/bg-treasury.png);
 	background-position: center;
 	filter: brightness(0.8);
-	border: 1px solid grey;
+	border: 2px solid;
+	border-color: var(--border);
 }
 
 .header > div {
@@ -85,6 +95,8 @@ main {
 	align-items: center;
 }
 
+/* NAVIGATION */
+
 .navigation {
 	display: flex;
 	width: 100%;
@@ -92,10 +104,6 @@ main {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 40px;
-	background-image: url(/images/bg-gray.png);
-	background-color: rgba(11, 11, 11, 0.65);
-	background-blend-mode: darken;
-	border: 1px solid grey;
 }
 
 .navigation > h3 {
@@ -110,6 +118,14 @@ main {
 .navigation > .separator {
 	color: rgb(122, 103, 93);
 	font-size: 22px;
+}
+
+.navigation > a,
+a:visited,
+a:hover,
+a:active {
+	color: inherit;
+	text-decoration: none;
 }
 
 .line {
@@ -274,12 +290,10 @@ main {
 .fullcard {
 	display: flex;
 	flex-direction: row;
-	width: 500px;
+	width: 700px;
 	min-width: 500px;
-	height: 300px;
+	height: 400px;
 	min-height: 300px;
-	background-image: url(/images/bg-gray.png);
-	border-radius: 25px;
 }
 
 .fullcard > .top {
@@ -327,4 +341,26 @@ main {
 	height: 35px;
 	min-width: 45px;
 	min-height: 35px;
+}
+
+/* CREATURES PAGE */
+
+.side-gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 200px;
+	height: 400px;
+	min-width: 200px;
+	min-height: 400px;
+}
+
+.side-gallery-image {
+	border: 1px solid;
+	border-color: var(--border);
+	opacity: 0.7;
+}
+
+.side-gallery-image:hover {
+	opacity: 1;
 }

@@ -38,7 +38,6 @@ export interface Room {
 }
 
 export interface Spell {
-	id: number;
 	name: string;
 	textId: string;
 }

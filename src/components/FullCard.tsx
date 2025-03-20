@@ -1,9 +1,6 @@
-import Image from "next/image";
-import { getAbilities, getRooms, getJobs, checkIfHasSpeed } from "@/functions/getInfo";
+import { getAbilities, getRooms, getJobs, checkIfHasSpeed } from "@/functions/functions";
 import { CardProps } from "./Card";
-import { scaleStat, scaleStatWithSpeed } from "@/functions/getInfo";
-import { Rooms } from "@/data/rooms";
-import { Room } from "@/data/interfaces";
+import { scaleStat, scaleStatWithSpeed } from "@/functions/functions";
 
 export default function FullCard(props: CardProps) {
 	let speed = checkIfHasSpeed(props.creature);
@@ -15,10 +12,12 @@ export default function FullCard(props: CardProps) {
 
 	return (
 		<>
-			<div key={props.creature.name} className="fullcard">
+			<div key={props.creature.name} className="graybox fullcard">
 				<div>
 					<img src={`/images/small/portraits/${props.creature.id}.png`} className="ikon" />
-					<p>{props.creature.name}</p>
+					<br />
+					<br />
+
 					<div className="stat-wrapper">
 						<span className="stat">
 							<img key="training-icon" alt="Training Room" src={`/images/icons/rooms/training.png`} />

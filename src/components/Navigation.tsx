@@ -1,8 +1,6 @@
-import Image from "next/image";
-
 export default function Header() {
 	return (
-		<div className="navigation">
+		<div className="graybox navigation">
 			<h3>
 				<a href="/">Basic Info</a>
 			</h3>

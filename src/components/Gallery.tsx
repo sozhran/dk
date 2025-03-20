@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Creature } from "@/data/interfaces";
-import { getAbilities, getRooms, getJobs } from "@/functions/getInfo";
 import { Creatures } from "@/data/creatures";
 
 export default function Gallery() {

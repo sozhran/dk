@@ -8,7 +8,7 @@ export default function SpellsPage() {
 			<h1>Spells</h1>
 			<div key="spells" className="gallery">
 				{Spells.map((x: Spell, index) => (
-					<div className="ikon-container">
+					<div key={`spell-${index}`} className="ikon-container">
 						<img className="" key={`spell-${index}`} src={`/images/icons/spells/${x.textId}.png`} alt={x.name} />
 					</div>
 				))}

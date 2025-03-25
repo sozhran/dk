@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Creature, Multitype } from "@/data/interfaces";
 
-export const levels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+export const creatureLevels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
 export const getCreaturesWithSpeed = (creatures: Creature[]) => {
 	const result: { [key: string]: string } = {};
@@ -77,7 +77,7 @@ const serializeToString = (data: string | string[] | null) => {
 };
 
 export const getSpells = (spells: any) => {
-	return levels.map(function (level) {
+	return creatureLevels.map(function (level) {
 		return (
 			<p key={level}>
 				{level}: {spells[level] ? serializeToString(spells[level]) : "-"}

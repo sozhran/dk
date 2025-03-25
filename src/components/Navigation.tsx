@@ -10,6 +10,10 @@ export default function Header() {
 			</h3>
 			<span className="separator">|</span>
 			<h3>
+				<a href="/comparison">Comparison</a>
+			</h3>
+			<span className="separator">|</span>
+			<h3>
 				<a href="/rooms">Rooms</a>
 			</h3>
 			<span className="separator">|</span>

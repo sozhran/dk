@@ -1,65 +1,57 @@
+"use client";
+import Image from "next/image";
 import { getAbilities, getRooms, getJobs, checkIfHasSpeed } from "@/functions/functions";
 import { CardProps } from "./Card";
 import { scaleStat, scaleStatWithSpeed } from "@/functions/functions";
+import ScaledStatRow from "./ScaledStatRow";
+import { useState } from "react";
+import { Creatures } from "@/data/creatures";
+import { Creature } from "@/data/interfaces";
 
 export default function FullCard(props: CardProps) {
-	let speed = checkIfHasSpeed(props.creature);
+	const [speedState, setSpeedState] = useState<boolean>(true);
 
-	const training = scaleStat(props.creature.training.skill);
-	const research = scaleStatWithSpeed(props.creature.researchSkill);
-	const manufacture = scaleStatWithSpeed(props.creature.manufactureSkill);
-	const scavenger = scaleStatWithSpeed(props.creature.training.skill);
+	const creature = Creatures.find((creature: Creature) => creature.id === props.creature);
+
+	if (!creature) {
+		return;
+	}
+
+	const toggleSpeed = () => {
+		if (speedState) {
+			setSpeedState(false);
+		} else {
+			setSpeedState(true);
+		}
+	};
+
+	let speed = checkIfHasSpeed(creature);
+
+	const research = scaleStatWithSpeed(creature.researchSkill);
+	const manufacture = scaleStatWithSpeed(creature.manufactureSkill);
+	const scavenger = scaleStatWithSpeed(creature.training.skill);
 
 	return (
 		<>
-			<div key={props.creature.name} className="graybox fullcard">
+			<div key={creature.name} className="graybox fullcard">
 				<div>
-					<img src={`/images/small/portraits/${props.creature.id}.png`} className="ikon" />
+					<img src={`/images/small/portraits/${creature.id}.png`} />
 					<br />
 					<br />
 
 					<div className="stat-wrapper">
-						<span className="stat">
-							<img key="training-icon" alt="Training Room" src={`/images/icons/rooms/training.png`} />
-						</span>
-						{training.map((stat, index) => (
-							<span className="stat" key={`training-${index}`}>
-								{stat}
-							</span>
-						))}
+						<img key="training-icon" src={`/images/icons/rooms/training.png`} className="ikon-container" />
+						<span className="stat">{creature.training.skill}</span>
+						<span className="stat">{creature.training.cost}</span>
 					</div>
-					<div className="stat-wrapper">
-						<span className="stat">
-							<img key="library-icon" alt="Library" src={`/images/icons/rooms/research.png`} />
-						</span>
-						{research.map((stat, index) => (
-							<span className="stat" key={`research-${index}`}>
-								{speed && speed <= stat[0] ? `${stat[0]} (${stat[1]})` : stat[0]}
-							</span>
-						))}
-					</div>
-					<div className="stat-wrapper">
-						<span className="stat">
-							<img key="workshop-icon" alt="Workshop" src={`/images/icons/rooms/workshop.png`} />
-						</span>
-						{manufacture.map((stat, index) => (
-							<span className="stat" key={`manufacture-${index}`}>
-								{speed && speed <= stat[0] ? `${stat[0]} (${stat[1]})` : stat[0]}
-							</span>
-						))}
-					</div>
-					<div className="stat-wrapper">
-						<span className="stat">
-							<span className="ikon-container">
-								<img key="scavenger-icon" alt="Scavenger Room" src={`/images/icons/rooms/scavenger.png`} />
-							</span>
-						</span>
-						{scavenger.map((stat, index) => (
-							<span className="stat" key={`scavenger-${index}`}>
-								{speed && speed <= stat[0] ? `${stat[0]} (${stat[1]})` : stat[0]}
-							</span>
-						))}
-					</div>
+
+					{/* add a button that turns off Speed instead */}
+					<button onClick={toggleSpeed}>Turn Speed {speedState ? "off" : "on"}</button>
+
+					<ScaledStatRow stat="research" base_value={creature.researchSkill} speed={speedState ? speed : null} />
+					<ScaledStatRow stat="manufacture" base_value={creature.manufactureSkill} speed={speedState ? speed : null} />
+					<ScaledStatRow stat="scavenger" base_value={creature.scavenger.skill} speed={speedState ? speed : null} />
+
 					{/*<Image key={props.creature.id} alt={props.creature.name} src={`/images/small/portraits/${props.creature.id}.png`} />*/}
 					{/*<section className="top">
 				

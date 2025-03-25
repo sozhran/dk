@@ -12,6 +12,7 @@
 		--border-selected: #404040;
 		--background: #0a0a0a;
 		--foreground: #ededed;
+		--compare-gap: 100px;
 	}
 }
 @font-face {
@@ -403,6 +404,8 @@ a:active {
 	gap: 20px;
 }
 
+/*.compare-layout{}*/
+
 .comparison-gallery {
 	display: flex;
 	flex-direction: row;
@@ -411,9 +414,39 @@ a:active {
 	height: auto;
 }
 
-.comparison-fight {
-	background-image: var(--bg);
-	width: auto;
-	height: 400px;
+.compare-card {
+	height: 350px;
 	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.slider-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	height: 35px;
+	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+	transition: opacity 0.2s;
+}
+
+.slider {
+	width: 150px;
+	height: 5px;
+	background: var(--border-selected);
+	outline: #b45309;
+}
+
+.slider-container:hover {
+	opacity: 1;
+}
+
+.slider::-moz-range-thumb {
+	width: 15px;
+	height: 15px;
+	background: var(--orange);
+	cursor: pointer;
 }

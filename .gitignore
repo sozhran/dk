@@ -17,6 +17,9 @@
 /build
 
 # misc
+/_noindex
+/raw_data_processing/cfgs
+/raw_data_processing/extra
 .DS_Store
 *.pem
 

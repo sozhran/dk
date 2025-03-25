@@ -4,10 +4,11 @@ import { Creature } from "@/data/interfaces";
 import { Creatures } from "@/data/creatures";
 import FullCard from "@/components/FullCard";
 import { useState } from "react";
+import { Slider } from "@/components/ui/slider";
 
 export default function CreaturesPage() {
-	const [selectedLeft, setSelectedLeft] = useState<string>("");
-	const [selectedRight, setSelectedRight] = useState<string>("");
+	const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
+	const [selectedRight, setSelectedRight] = useState<string | null>(null);
 	const [levelLeft, setLevelLeft] = useState<number>(1);
 	const [levelRight, setLevelRight] = useState<number>(1);
 

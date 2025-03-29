@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import { getAbilities, getRooms, getJobs, checkIfHasSpeed } from "@/functions/functions";
+import { getAbilities, getRooms, getJobs, checkIfHasSpeed, getStatProgression, getStringOrArray, creatureLevels } from "@/functions/functions";
 import { CardProps } from "./Card";
-import { scaleStat, scaleStatWithSpeed } from "@/functions/functions";
 import ScaledStatRow from "./ScaledStatRow";
 import { useState } from "react";
 import { Creatures } from "@/data/creatures";
@@ -27,9 +26,13 @@ export default function FullCard(props: CardProps) {
 
 	let speed = checkIfHasSpeed(creature);
 
-	const research = scaleStatWithSpeed(creature.researchSkill);
-	const manufacture = scaleStatWithSpeed(creature.manufactureSkill);
-	const scavenger = scaleStatWithSpeed(creature.training.skill);
+	const wage = getStatProgression(creature.wage);
+
+	const research = getStatProgression(creature.researchSkill, speed);
+	const manufacture = getStatProgression(creature.manufactureSkill, speed);
+	const scavenger = getStatProgression(creature.scavenger.skill, speed);
+
+	const getChickens = (num: number) => {};
 
 	return (
 		<>
@@ -45,9 +48,27 @@ export default function FullCard(props: CardProps) {
 						<span className="stat">{creature.training.cost}</span>
 					</div>
 
+					<p>Primary job: {getStringOrArray(creature.job.primary)}</p>
+					<p>Secondary job: {getStringOrArray(creature.job.secondary)}</p>
+					<div className="row">
+						Hunger:&nbsp;&nbsp;
+						{[...Array(creature.hunger.chickens)].map((_, i) => {
+							return <Image key={`chicken-${i}`} alt="" src={"/images/small/spells/chicken.png"} width={13} height={22} />;
+						})}
+						&nbsp;&nbsp;/&nbsp;&nbsp;{creature.hunger.rate}
+					</div>
+
 					{/* add a button that turns off Speed instead */}
 					<button onClick={toggleSpeed}>Turn Speed {speedState ? "off" : "on"}</button>
 
+					<div className="stat-wrapper">
+						<span className="stat"></span>
+						{creatureLevels.map((level) => (
+							<div className="stat" key={`level-${level}`}>
+								{level}
+							</div>
+						))}
+					</div>
 					<ScaledStatRow stat="research" base_value={creature.researchSkill} speed={speedState ? speed : null} />
 					<ScaledStatRow stat="manufacture" base_value={creature.manufactureSkill} speed={speedState ? speed : null} />
 					<ScaledStatRow stat="scavenger" base_value={creature.scavenger.skill} speed={speedState ? speed : null} />

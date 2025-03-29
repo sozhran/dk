@@ -1,4 +1,4 @@
-import { creatureLevels, scaleStatWithSpeed } from "@/functions/functions";
+import { creatureLevels, getStatProgressionWithSpeed } from "@/functions/functions";
 
 type ScaledRowProps = { stat: string; base_value: number | null; speed: number | null };
 
@@ -39,7 +39,7 @@ export default function ScaledStatRow(props: ScaledRowProps) {
 	}
 
 	// otherwise, calculate values for all 10 levels and return them
-	const scaledStat = scaleStatWithSpeed(props.base_value);
+	const scaledStat = getStatProgressionWithSpeed(props.base_value);
 
 	return (
 		<div className="stat-wrapper">

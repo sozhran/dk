@@ -15,21 +15,33 @@ export const getCreaturesWithSpeed = (creatures: Creature[]) => {
 	});
 };
 
-export const scaleStat = (base_value: number) => {
+// Function scales a creature stat from level 1 to level 10 + calculates doubling effect from Speed
+// if it's provided (which is not always equal to x2 since the number is doubled _before_ the result is
+// rounded down) starting with the level when the creature gets it.
+// The 'speed' parameter will be omitted for stats that are unaffected by Speed (such as wages).
+export function getStatProgression(base_value: number | null, speed?: number | null) {
 	const result = [base_value];
 
-	for (let i = 2; i < 11; i++) {
-		let raw_stat = base_value + base_value * 0.35 * (i - 1);
+	if (!base_value) {
+		for (let i = 2; i < 11; i++) {
+			result.push(null);
+		}
+	} else {
+		for (let i = 2; i < 11; i++) {
+			let raw_stat = base_value + base_value * 0.35 * (i - 1);
 
-		result.push(Math.floor(raw_stat));
+			if (speed && speed <= i) {
+				result.push(Math.floor(raw_stat * 2));
+			} else result.push(Math.floor(raw_stat));
+		}
 	}
 
 	return result;
-};
+}
 
-// scales a creature stat from level 1 to level 10 + calculates doubling effect from Speed
-// (since doubling happens before the result is rounded down)
-export const scaleStatWithSpeed = (base_value: number) => {
+// Does the same thing but calculates Speed effect for all levels and returns an array with 2 numbers
+// (without and with speed) for all levels.
+export const getStatProgressionWithSpeed = (base_value: number) => {
 	const result = [[base_value, base_value * 2]];
 
 	for (let i = 2; i < 11; i++) {
@@ -49,6 +61,32 @@ export function checkIfHasSpeed(creature: Creature) {
 	}
 
 	return null;
+}
+
+export function getStringOrArray(data: string | string[] | null) {
+	if (!data) {
+		return "-";
+	}
+
+	if (typeof data === "string") {
+		return data;
+	} else {
+		return data.join(", ");
+	}
+}
+
+export function cookData(creature: Creature, level: number) {
+	let speed = checkIfHasSpeed(creature);
+
+	if (speed && speed > level) {
+		speed = null;
+	}
+
+	const cookedCrit = { ...creature };
+
+	cookedCrit.wage;
+
+	return;
 }
 
 export const getRooms = (rooms: any) => {

@@ -6,7 +6,7 @@ import LevelSlider from "@/components/LevelSlider";
 import CompareGallery from "@/components/CompareGallery";
 import CompareCard from "@/components/CompareCard";
 
-export default function Comparison() {
+export default function Compare() {
 	const [creatureLeft, setCreatureLeft] = useState<Creature | null>(null);
 	const [creatureRight, setCreatureRight] = useState<Creature | null>(null);
 	const [levelLeft, setLevelLeft] = useState<number>(1);

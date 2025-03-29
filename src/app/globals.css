@@ -450,3 +450,9 @@ a:active {
 	background: var(--orange);
 	cursor: pointer;
 }
+
+.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}

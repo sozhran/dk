@@ -4,6 +4,8 @@ import { Creature } from "@/data/interfaces";
 export type CardProps = { contestant: Creature | null; opponent: Creature | null; level: number; opponentLevel: number };
 
 export default function CompareCard(props: CardProps) {
+	const cookData = (creature: Creature) => {};
+
 	const compareStats = (stat: keyof Creature) => {
 		if (!props.contestant || !props.opponent || !props.contestant[stat] || !props.opponent[stat]) {
 			return;

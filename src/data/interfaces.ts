@@ -2,7 +2,7 @@ export interface Creature {
 	id: string;
 	name: string;
 	alignment: "good" | "evil";
-	room: {} | null;
+	room: { [key: string]: number };
 	job: { primary: Multitype; secondary: Multitype };
 	willRefuseJobs: string[];
 	training: { skill: number, cost: number };

@@ -38,16 +38,35 @@ export default function FullCard(props: CardProps) {
 		<>
 			<div key={creature.name} className="graybox fullcard">
 				<div>
-					<img src={`/images/small/portraits/${creature.id}.png`} />
-					<br />
-					<br />
+					<Image alt="" src={`/images/medium/portraits/${creature.id}.png`} width={48} height={48} />
 
+					<p>{creature.name}</p>
+					<p>Alignment: {creature.alignment}</p>
+					<p>
+						Attracted:{" "}
+						{Object.keys(creature.room).map((room) => (
+							<span>
+								{room}: {creature.room[room]}
+							</span>
+						))}
+					</p>
+					<p>
+						Wage: {creature.wage}, Health: {creature.health}, Strength: {creature.strength}, Dexterity: {creature.dexterity}, Defence:{" "}
+						{creature.defence}, Armour: {creature.armour}, Speed: {creature.movementSpeed}, Luck: {creature.luck}
+					</p>
+					<p>Type: {creature.flying ? "Flying" : "Not flying"}</p>
+					<p>Living: {creature.undead ? "Undead" : "Yes"}</p>
+					<p>Enemies: {creature.hates ? creature.hates : "None"}</p>
+					<p>Anger jobs: {creature.angerJobs ? creature.angerJobs.join(", ") : "None"}</p>
+					<br />
+					<br />
 					<div className="stat-wrapper">
-						<img key="training-icon" src={`/images/icons/rooms/training.png`} className="ikon-container" />
+						<picture>
+							<img alt="" key="training-icon" src={`/images/icons/rooms/training.png`} className="ikon-container" />
+						</picture>
 						<span className="stat">{creature.training.skill}</span>
 						<span className="stat">{creature.training.cost}</span>
 					</div>
-
 					<p>Primary job: {getStringOrArray(creature.job.primary)}</p>
 					<p>Secondary job: {getStringOrArray(creature.job.secondary)}</p>
 					<div className="row">
@@ -57,10 +76,8 @@ export default function FullCard(props: CardProps) {
 						})}
 						&nbsp;&nbsp;/&nbsp;&nbsp;{creature.hunger.rate}
 					</div>
-
 					{/* add a button that turns off Speed instead */}
 					<button onClick={toggleSpeed}>Turn Speed {speedState ? "off" : "on"}</button>
-
 					<div className="stat-wrapper">
 						<span className="stat"></span>
 						{creatureLevels.map((level) => (
@@ -72,7 +89,6 @@ export default function FullCard(props: CardProps) {
 					<ScaledStatRow stat="research" base_value={creature.researchSkill} speed={speedState ? speed : null} />
 					<ScaledStatRow stat="manufacture" base_value={creature.manufactureSkill} speed={speedState ? speed : null} />
 					<ScaledStatRow stat="scavenger" base_value={creature.scavenger.skill} speed={speedState ? speed : null} />
-
 					{/*<Image key={props.creature.id} alt={props.creature.name} src={`/images/small/portraits/${props.creature.id}.png`} />*/}
 					{/*<section className="top">
 				

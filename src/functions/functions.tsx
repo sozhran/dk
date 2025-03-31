@@ -65,7 +65,7 @@ export function checkIfHasSpeed(creature: Creature) {
 
 export function getStringOrArray(data: string | string[] | null) {
 	if (!data) {
-		return "-";
+		return "None";
 	}
 
 	if (typeof data === "string") {

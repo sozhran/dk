@@ -15,7 +15,7 @@ export default function CreaturesPage() {
 			<h2>Creatures</h2>
 			<br />
 			<div className="grid-layout">
-				<div key="creatures" className="side-gallery">
+				<div key="creatures" className="side-gallery graybox">
 					{creatures.map((x: Creature) => (
 						<span key={x.id} className={x.id === selectedCreature ? "side-gallery-portrait-selected" : "side-gallery-portrait"}>
 							<Image

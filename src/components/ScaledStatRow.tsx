@@ -25,7 +25,9 @@ export default function ScaledStatRow(props: ScaledRowProps) {
 		return (
 			<div className="stat-wrapper">
 				<span className="stat">
-					<img key={`${props.stat}-icon`} alt={altText} src={`/images/icons/rooms/${imgName}.png`} />
+					<picture>
+						<img key={`${props.stat}-icon`} alt={altText} src={`/images/icons/rooms/${imgName}.png`} />
+					</picture>
 				</span>
 				{creatureLevels.map((level) => {
 					return (
@@ -43,9 +45,10 @@ export default function ScaledStatRow(props: ScaledRowProps) {
 
 	return (
 		<div className="stat-wrapper">
-			<span className="stat">
+			<picture className="stat">
 				<img key={`${props.stat}-icon`} alt={altText} src={`/images/icons/rooms/${imgName}.png`} />
-			</span>
+			</picture>
+
 			{scaledStat.map((stat, index) => (
 				<div className="stat" key={`${props.stat}-${index}`}>
 					{props.speed && props.speed <= stat[0] ? (

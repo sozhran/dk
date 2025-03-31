@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*@import "tailwindcss";*/
 
 @layer base {
 	:root {
@@ -8,7 +6,7 @@
 		--stat-border: theme(colors.amber.950);
 		/*--orange: theme(colors.amber.700);*/
 		--orange: #b45309;
-		--border: #161616;
+		--border: #1c1c1c;
 		--border-selected: #404040;
 		--background: #0a0a0a;
 		--foreground: #ededed;
@@ -214,10 +212,6 @@ a:active {
 	flex-wrap: wrap;
 }*/
 
-.noresize > img {
-	object-fit: none;
-}
-
 .creature-card {
 	width: 300px;
 	height: 250px;
@@ -288,10 +282,11 @@ a:active {
 .fullcard {
 	display: flex;
 	flex-direction: row;
-	width: 700px;
-	min-width: 500px;
+	width: auto;
+	/*min-width: 500px;*/
 	height: 400px;
 	min-height: 300px;
+	padding: 20px;
 }
 
 .fullcard > .top {
@@ -364,10 +359,11 @@ a:active {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	width: 200px;
-	height: 400px;
-	min-width: 200px;
-	min-height: 400px;
+	width: 244px;
+	height: auto;
+	min-width: 244px;
+	min-height: auto;
+	padding: 20px;
 }
 
 .side-gallery-portrait {
@@ -397,6 +393,12 @@ a:active {
 }
 
 /*.compare-layout{}*/
+
+.comparison-gallery-wrapper {
+	padding: 20px;
+	background-color: teal;
+	width: auto;
+}
 
 .comparison-gallery {
 	display: flex;
@@ -487,7 +489,8 @@ a:active {
 	align-items: center;
 }
 
-.attraction-stat > span {
+.attraction-stat > span,
+picture {
 	width: 20px;
 	height: 40px;
 	min-width: 20px;
@@ -495,12 +498,4 @@ a:active {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.centered {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	/*width: max-content;*/
-	/*max-width: inherit;*/
 }
